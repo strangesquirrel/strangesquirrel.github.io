@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>$:/config/AnimationDuration</li>
 
+<li>$:/config/AutoSave</li>
+
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/Navigation/openLinkFromInsideRiver</li>
@@ -265,8 +267,6 @@ Error message and password prompt
 
 <li>$:/palette</li>
 
-<li>$:/palettes/SolarizedDark</li>
-
 <li>$:/palettes/Vanilla 1</li>
 
 <li>$:/plugins/danielo515/context/css</li>
@@ -296,6 +296,8 @@ Error message and password prompt
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/palettemanager/showexternal</li>
 
 <li>$:/state/ShowPaletteEditor</li>
 
@@ -833,6 +835,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 </div>
 <div created="20200418161856892" modified="20200808143302000" title="$:/config/AnimationDuration">
 <pre>400</pre>
+</div>
+<div created="20210129224957461" creator="Geodron" modified="20210129224958186" modifier="Geodron" title="$:/config/AutoSave">
+<pre>yes</pre>
 </div>
 <div bag="default" created="20191215203357897" modified="20200603122108780" revision="0" tags="$:/giffmex/stroll" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki">
 <pre>comptext</pre>
@@ -11062,115 +11067,8 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 button.green-link {color:#00cc00;}
 </pre>
 </div>
-<div created="20200228210954683" creator="Geodron" modified="20210129224423779" modifier="Geodron" title="$:/palette">
+<div created="20200228210954683" creator="Geodron" modified="20210129225110269" modifier="Geodron" title="$:/palette">
 <pre>$:/palettes/SolarizedDark</pre>
-</div>
-<div created="20210129224440566" creator="Geodron" description="Precision dark colors for machines and people" license="MIT, Ethan Schoonover, https://github.com/altercation/solarized/blob/master/LICENSE" modified="20210129224527682" modifier="Geodron" name="SolarizedDark" tags="$:/tags/Palette" title="$:/palettes/SolarizedDark" type="application/x-tiddler-dictionary">
-<pre>alert-background: #073642
-alert-border: #93a1a1
-alert-highlight: #6536d3
-alert-muted-foreground: #6536d3
-background: #073642
-blockquote-bar: #6536d3
-button-background: #073642
-button-border: #586e75
-button-foreground: #93a1a1
-code-background: #073642
-code-border: #586e75
-code-foreground: #93a1a1
-dirty-indicator: inherit
-download-background: #859900
-download-foreground: #073642
-dragger-background: #073642
-dragger-foreground: #839496
-dropdown-background: #073642
-dropdown-border: #93a1a1
-dropdown-tab-background: #002b36
-dropdown-tab-background-selected: #073642
-dropzone-background: #859900
-external-link-background: inherit
-external-link-background-hover: inherit
-external-link-background-visited: inherit
-external-link-foreground: #268bd2
-external-link-foreground-hover: 
-external-link-foreground-visited: #268bd2
-foreground: #839496
-message-background: #002b36
-message-border: #586e75
-message-foreground: #839496
-modal-backdrop: #657b83
-modal-background: #002b36
-modal-border: #586e75
-modal-footer-background: #073642
-modal-footer-border: #586e75
-modal-header-border: #586e75
-muted-foreground: #93a1a1
-notification-background: #002b36
-notification-border: #586e75
-page-background: #073642
-pre-background: inherit
-pre-border: #657b83
-primary: #859900
-select-tag-background: #002b36
-select-tag-foreground: #839496
-sidebar-button-foreground: #93a1a1
-sidebar-controls-foreground: #93a1a1
-sidebar-controls-foreground-hover: #eee8d5
-sidebar-foreground: #93a1a1
-sidebar-foreground-shadow: transparent
-sidebar-muted-foreground: #839496
-sidebar-muted-foreground-hover: #93a1a1
-sidebar-tab-background: #002b36
-sidebar-tab-background-selected: #073642
-sidebar-tab-border: #073642
-sidebar-tab-border-selected: #839496
-sidebar-tab-divider: #002b36
-sidebar-tab-foreground: #657b83
-sidebar-tab-foreground-selected: #93a1a1
-sidebar-tiddler-link-foreground: #2aa198
-sidebar-tiddler-link-foreground-hover: #eee8d5
-site-title-foreground: #6536d3
-static-alert-foreground: #93a1a1
-tab-background: #073642
-tab-background-selected: #002b36
-tab-border: #586e75
-tab-border-selected: #93a1a1
-tab-divider: #93a1a1
-tab-foreground: #839496
-tab-foreground-selected: #93a1a1
-table-border: #586e75
-table-footer-background: #073642
-table-header-background: #073642
-tag-background: #b58900
-tag-foreground: #002b36
-tiddler-background: #002b36
-tiddler-border: #586e75
-tiddler-controls-foreground: inherit
-tiddler-controls-foreground-hover: #6536d3
-tiddler-controls-foreground-selected: #2aa198
-tiddler-editor-background: #002b36
-tiddler-editor-border: #073642
-tiddler-editor-border-image: #002b36
-tiddler-editor-fields-even: #002b36
-tiddler-editor-fields-odd: #073642
-tiddler-info-background: #073642
-tiddler-info-border: #657b83
-tiddler-info-tab-background: #002b36
-tiddler-link-background: #002b36
-tiddler-link-foreground: #2aa198
-tiddler-subtitle-foreground: #839496
-tiddler-title-foreground: #6536d3
-toolbar-cancel-button: #839496
-toolbar-close-button: #839496
-toolbar-delete-button: #dc322f
-toolbar-done-button: #839496
-toolbar-edit-button: #839496
-toolbar-info-button: #839496
-toolbar-new-button: #839496
-toolbar-options-button: #839496
-toolbar-save-button: inherit
-untagged-background: #586e75
-very-muted-foreground: #586e75</pre>
 </div>
 <div created="20200808143350695" modified="20200808143350695" title="$:/palettes/Vanilla 1">
 <pre></pre>
@@ -12876,20 +12774,23 @@ exports.context = contextWidget;
 <div bag="default" created="20200414222832782" modified="20210129213506442" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>Third Brain</pre>
 </div>
+<div created="20210129225102001" creator="Geodron" modified="20210129225103374" modifier="Geodron" title="$:/state/palettemanager/showexternal">
+<pre>no</pre>
+</div>
 <div created="20210129224428734" creator="Geodron" modified="20210129224428734" modifier="Geodron" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210129224253134" creator="Geodron" modified="20210129224310824" modifier="Geodron" title="$:/state/tab--1963855381">
+<div created="20210129224253134" creator="Geodron" modified="20210129224753579" modifier="Geodron" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
 <div created="20210129213646839" modified="20210129213652268" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
-<div created="20210129213756284" creator="Geodron" modified="20210129224248765" modifier="Geodron" title="$:/state/tab-1749438307">
+<div created="20210129213756284" creator="Geodron" modified="20210129225002349" modifier="Geodron" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
-<div created="20210129213808894" creator="Geodron" modified="20210129213808894" modifier="Geodron" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
+<div created="20210129213808894" creator="Geodron" modified="20210129224949813" modifier="Geodron" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
 <div created="20210129213434661" modified="20210129213434661" title="$:/state/tab/sidebar--595412856">
 <pre>$:/.giffmex/sidebar/advancedconfig</pre>
@@ -12909,7 +12810,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210129213703911" modifier="Geodro" revision="1" title="$:/status/UserName">
 <pre>Geodron</pre>
 </div>
-<div created="20210129224230422" creator="Geodron" list="[[OK can I start now]] Welcome" modified="20210129224246486" modifier="Geodron" title="$:/StoryList">
+<div created="20210129224230422" creator="Geodron" list="$:/ControlPanel [[OK can I start now]] Welcome" modified="20210129224737052" modifier="Geodron" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
