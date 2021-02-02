@@ -371,6 +371,8 @@ Error message and password prompt
 
 <li>My phone is rarely the best way to do something</li>
 
+<li>Personal Sunrise</li>
+
 <li>phones these days are rubbish</li>
 
 <li>Tasker</li>
@@ -13441,7 +13443,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210202213034775" creator="Strange Squirrel" list="Tasker Welcome" modified="20210202213108521" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210202213034775" creator="Strange Squirrel" list="[[Personal Sunrise]] Tasker Welcome" modified="20210202213606893" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13959,6 +13961,28 @@ But my preference is to make notes, and transfer them to my [[Bullet Journal]]. 
 This way, anything that caught your eye is easily captured into your catch-all [[Bullet Journal]] ready to be looked into further when you are ready to do so.
 
 I really like this process because it gives me a little mini-magazine, almost always guaranteed to contain articles I want to read but that I am never expecting thanks to random setting on P2K. And then once I've read, I stop. No distractions. And if I see something I want to keep/research, I just highlight it real quick. No distractions. It's fun, gives me a little something to look forward to reading each day, and actually provides me with little sparks of ideas that actually have the chance to grow into something, thanks to being able to quickly capture them into the bullet journal. Much better than endlessly scrolling and clicking and getting excited but forgetting where you saw the thing.</pre>
+</div>
+<div created="20210202213616728" creator="Strange Squirrel" modified="20210202220135153" modifier="Strange Squirrel" title="Personal Sunrise">
+<pre>I am absolutely a night owl and have always difficult to get up on a morning, and this method has made this much more bearable. I have Phillips Hue lighting and so I use a plugin called AutoHue for Tasker that actually controls the lights.
+
+The idea behind this Profile is to have a light in my room imitate a sort of mini-sunrise shortly before I'm due to get up, so that I never have to get up in the dark (which I hate doing). The thing here is that I wouldn't want to do this if it's already light out, so I want to so a quick check for that.
+
+At my old job I had quite varied shift times and so I would have to get up at different times each day. I used to use an awesome alarm clock app called Sleep As Android, set up alarms as needed on a Sunday evening, and let the fact that Sleep As Android is //also// a Tasker plugin let Tasker figure out if and when to run my personal sunrise. These days I can get up at a fairly set time so I don't use Sleep As Android any more, but it's such a cool app and I thought it fit into this task so well back when my alarm time were literally different every that I'm still going to include it.
+
+
+!!!Sunrise with AutoHue
+The actual sunrise itself is simple enough. I have AutoHue control one light, coming on 10 minutes before my alarm time, at its dimmest setting and at a pure red colour. Over 10 minutes, the light changes from its minimum brightness to quite bright, and also changes from red to a 'daylight' white. It's really effective at gently waking up without any nasty shocks.
+
+This is set up across 2 actions: the first to switch on the light, set its brightness to 1, and set it colour to red. In Autohue, I have this red colour defined as x=0.7006 y=0.2993 but there's a colour selector so just use that.
+
+Step two is to have the light steadily brighten up, so the instructions for AutoHue for this step are for the colour to change to ct (i.e. color temperature) = 204, brightness to 166, and a transition time of 6000. The slider for transition time doesn't go actually go as high as this, so set it to whatever, then scroll down to find the JSON that autohue actually sends, and edit the transitiontime value there to 6000 (the units for this is tenths of a second, so 6000 is 600 seconds, i.e. 10 minutes)
+
+So that forms the last part of the task really. What we next set up are the instructions to decide whether to run this little sunrise or not.
+
+!!!When is the actual sunrise?
+To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a separate Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I don't use the Sunset global variable here but I do for other things, so why not grab it at the same time as Sunrise?
+
+You need to put your latitude and longitude in to get the right times for where you are. This is no problem though cos they're actually something that Tasker can</pre>
 </div>
 <div created="20210131150551040" creator="Strange Squirrel" modified="20210131151042653" modifier="Strange Squirrel" title="phones these days are rubbish">
 <pre>Years ago I used to love reading about new phones coming out. This one's got a front-facing camera, this one's got bluetooth, this one's got wireless charging, this one's got NFC. Before that even, the form factor changed. This one's a tiny flip phone, this one's bigger but it's got a colour screen and extra buttons for simple games. This one's got a full keyboard. You got a new phone every few years and it came with a load of new toys.
