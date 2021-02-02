@@ -13962,7 +13962,7 @@ This way, anything that caught your eye is easily captured into your catch-all [
 
 I really like this process because it gives me a little mini-magazine, almost always guaranteed to contain articles I want to read but that I am never expecting thanks to random setting on P2K. And then once I've read, I stop. No distractions. And if I see something I want to keep/research, I just highlight it real quick. No distractions. It's fun, gives me a little something to look forward to reading each day, and actually provides me with little sparks of ideas that actually have the chance to grow into something, thanks to being able to quickly capture them into the bullet journal. Much better than endlessly scrolling and clicking and getting excited but forgetting where you saw the thing.</pre>
 </div>
-<div created="20210202213616728" creator="Strange Squirrel" modified="20210202220135153" modifier="Strange Squirrel" title="Personal Sunrise">
+<div created="20210202213616728" creator="Strange Squirrel" modified="20210202223840684" modifier="Strange Squirrel" title="Personal Sunrise">
 <pre>I am absolutely a night owl and have always difficult to get up on a morning, and this method has made this much more bearable. I have Phillips Hue lighting and so I use a plugin called AutoHue for Tasker that actually controls the lights.
 
 The idea behind this Profile is to have a light in my room imitate a sort of mini-sunrise shortly before I'm due to get up, so that I never have to get up in the dark (which I hate doing). The thing here is that I wouldn't want to do this if it's already light out, so I want to so a quick check for that.
@@ -13982,7 +13982,31 @@ So that forms the last part of the task really. What we next set up are the inst
 !!!When is the actual sunrise?
 To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a separate Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I don't use the Sunset global variable here but I do for other things, so why not grab it at the same time as Sunrise?
 
-You need to put your latitude and longitude in to get the right times for where you are. This is no problem though cos they're actually something that Tasker can</pre>
+You need to put your latitude and longitude in to get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called %LOC, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called %location to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you %location1, which contains you latitude, and %location2, which contains your longitude.
+
+Put those into AutoWeb's Sunrise/Sunset API, and you'll get two variables out, %sunrise and %sunset. This is great but it's not quite in a format that we can use yet so we need to do a little bit of work on these.
+
+first of all, they're in 12-hour format, and we need them in 24-hour. Second, they use a colon between the hour and minute, which is pretty standard, but Tasker uses a . instead so we'll have to fix that too.
+
+So you'll want to do the following twice, one for %sunrise and one for %sunset (I will use %sunrise as the example). First do a Variable Split using : as the splitter. So now you have %sunrise1 containing the hour (in 12-hour format), %sunrise2 containing the minutes. and %sunrise3 containing either AM or PM.
+
+So do a Variable Add that will add 12 to %sunrise1 ''if'' %sunrise3 matches PM. Then do a Variable Set, to set a variable called %Sunrise to %sunrise1.%sunrise2 so that we have the 24-hour time, with a dot between the hours and minutes. (note it's %Sunrise with a capital S so that it's a global variable and we can use it back in our other task) 
+
+Thinking about this last part practically, you probably didn't really need to do the check with adding 12 to the hour for the sunrise, and you probably could just always add 12 to the hour for sunset. Because how often does the sun rise in the afternoon and set in the morning? But I dunno, why not do these things properly.
+
+Last thing, and this part annoys me a little bit, is that these times haven't factored in any daylight-savings. So when it's British Summer Time here, I have to add one to each of the variables (and I don't need to bother when we're on normal GMT). I've just got two more Variable Add actions that do this, and I enable and disable them as needed. Only need to do it twice a year so it's not too big a deal.
+
+!!!Without Sleep As Android
+
+So let's assume for this part that we're going to get up at a set time every day, say 7:30. We want to run our sunrise task 10 minutes before that, at 7:20. Because it's the kind of thing I might want to change now and then, go an make a variable (not in a task or anything, in the VARS tab) called %alarmMinusTen or something, and set this to 7.20 (with a dot, not a colon). Then create a new profile, based on Time, and set the from and to times both to %alarmMinusTen, then have it trigger the sunrise task that we half-set up earlier. We'll finish it off now.
+
+!!!Conditional sunrise
+
+You just need to put 1 action right at the start of this task: a Stop action with an if condition like this: %TIME &gt; %Sunrise. %TIME is Tasker's built-in global variable for the current time, so this is asking if the current time is greater than (ie after) today's sunrise, and if it is, just stop the task. Make sure this is step in the task.
+
+And that will do. A task that fires 10 minutes before your alarm, checks to make sure the sun isn't already up, and if it isn't, gives you a mini sunrise using your Hue light.
+
+</pre>
 </div>
 <div created="20210131150551040" creator="Strange Squirrel" modified="20210131151042653" modifier="Strange Squirrel" title="phones these days are rubbish">
 <pre>Years ago I used to love reading about new phones coming out. This one's got a front-facing camera, this one's got bluetooth, this one's got wireless charging, this one's got NFC. Before that even, the form factor changed. This one's a tiny flip phone, this one's bigger but it's got a colour screen and extra buttons for simple games. This one's got a full keyboard. You got a new phone every few years and it came with a load of new toys.
