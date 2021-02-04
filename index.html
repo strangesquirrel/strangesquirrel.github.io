@@ -13962,13 +13962,15 @@ This way, anything that caught your eye is easily captured into your catch-all [
 
 I really like this process because it gives me a little mini-magazine, almost always guaranteed to contain articles I want to read but that I am never expecting thanks to random setting on P2K. And then once I've read, I stop. No distractions. And if I see something I want to keep/research, I just highlight it real quick. No distractions. It's fun, gives me a little something to look forward to reading each day, and actually provides me with little sparks of ideas that actually have the chance to grow into something, thanks to being able to quickly capture them into the bullet journal. Much better than endlessly scrolling and clicking and getting excited but forgetting where you saw the thing.</pre>
 </div>
-<div created="20210202213616728" creator="Strange Squirrel" modified="20210204100923628" modifier="Strange Squirrel" title="Personal Sunrise">
+<div created="20210202213616728" creator="Strange Squirrel" modified="20210204101423670" modifier="Strange Squirrel" title="Personal Sunrise">
 <pre>I am absolutely a night owl and have always difficult to get up on a morning, and this method has made this much more bearable. I have Phillips Hue lighting and so I use a plugin called AutoHue for Tasker that actually controls the lights.
 
 The idea behind this Profile is to have a light in my room imitate a sort of mini-sunrise shortly before I'm due to get up, so that I never have to get up in the dark (which I hate doing). The thing here is that I wouldn't want to do this if it's already light out, so I want to so a quick check for that.
 
 At my old job I had quite varied shift times and so I would have to get up at different times each day. I used to use an awesome alarm clock app called Sleep As Android, set up alarms as needed on a Sunday evening, and let the fact that Sleep As Android is //also// a Tasker plugin let Tasker figure out if and when to run my personal sunrise. These days I can get up at a fairly set time so I don't use Sleep As Android any more, but it's such a cool app and I thought it fit into this task so well back when my alarm time were literally different every that I'm still going to include it.
 
+!!!What about actual sunrise?
+I would prefer to wake up to natural light if possible, so during the part of the year when it gets light early, I probably don't want any of my lights to come on (unless I'm getting up mega early for some reason). If this is something you'd like to factor in, you might want to make a quick Profile that will grab [[sunrise and sunset|Get Sunrise and Sunset times]] times at 1 minute past midnight every morning, ready for checking against in this profile.
 
 !!!Sunrise with AutoHue
 The actual sunrise itself is simple enough. I have AutoHue control one light, coming on 10 minutes before my alarm time, at its dimmest setting and at a pure red colour. Over 10 minutes, the light changes from its minimum brightness to quite bright, and also changes from red to a 'daylight' white. It's really effective at gently waking up without any nasty shocks.
@@ -13979,22 +13981,6 @@ Step two is to have the light steadily brighten up, so the instructions for Auto
 
 So that forms the last part of the task really. What we next set up are the instructions to decide whether to run this little sunrise or not.
 
-!!!When is the actual sunrise?
-To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a separate Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I don't use the Sunset global variable here but I do for other things, so why not grab it at the same time as Sunrise?
-
-You need to put your latitude and longitude in to get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called %LOC, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called %location to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you %location1, which contains you latitude, and %location2, which contains your longitude.
-
-Put those into AutoWeb's Sunrise/Sunset API, and you'll get two variables out, %sunrise and %sunset. This is great but it's not quite in a format that we can use yet so we need to do a little bit of work on these.
-
-first of all, they're in 12-hour format, and we need them in 24-hour. Second, they use a colon between the hour and minute, which is pretty standard, but Tasker uses a . instead so we'll have to fix that too.
-
-So you'll want to do the following twice, one for %sunrise and one for %sunset (I will use %sunrise as the example). First do a Variable Split using : as the splitter. So now you have %sunrise1 containing the hour (in 12-hour format), %sunrise2 containing the minutes. and %sunrise3 containing either AM or PM.
-
-So do a Variable Add that will add 12 to %sunrise1 ''if'' %sunrise3 matches PM. Then do a Variable Set, to set a variable called %Sunrise to %sunrise1.%sunrise2 so that we have the 24-hour time, with a dot between the hours and minutes. (note it's %Sunrise with a capital S so that it's a global variable and we can use it back in our other task) 
-
-Thinking about this last part practically, you probably didn't really need to do the check with adding 12 to the hour for the sunrise, and you probably could just always add 12 to the hour for sunset. Because how often does the sun rise in the afternoon and set in the morning? But I dunno, why not do these things properly.
-
-Last thing, and this part annoys me a little bit, is that these times haven't factored in any daylight-savings. So when it's British Summer Time here, I have to add one to each of the variables (and I don't need to bother when we're on normal GMT). I've just got two more Variable Add actions that do this, and I enable and disable them as needed. Only need to do it twice a year so it's not too big a deal.
 
 !!!Without Sleep As Android
 
