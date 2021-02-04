@@ -13394,7 +13394,7 @@ exports.context = contextWidget;
 <div created="20210130145402307" creator="Strange Squirrel" modified="20210130145405919" modifier="Strange Squirrel" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20210130150351179" creator="Strange Squirrel" modified="20210202213025209" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
+<div created="20210130150351179" creator="Strange Squirrel" modified="20210204101741815" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
 <div created="20210131151733986" creator="Strange Squirrel" modified="20210131151738619" modifier="Strange Squirrel" title="$:/state/notebook-sidebar-section">
@@ -13424,8 +13424,8 @@ exports.context = contextWidget;
 <div created="20210129213808894" creator="Geodron" modified="20210129230209486" modifier="Geodron" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210131151739939" creator="Strange Squirrel" modified="20210131151743463" modifier="Strange Squirrel" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+<div created="20210131151739939" creator="Strange Squirrel" modified="20210204101731959" modifier="Strange Squirrel" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
 <div created="20210129213434661" modified="20210129213434661" title="$:/state/tab/sidebar--595412856">
 <pre>$:/.giffmex/sidebar/advancedconfig</pre>
@@ -13900,8 +13900,10 @@ exports.context = contextWidget;
 <div bag="default" created="20200127165334843" modified="20200808142340054" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>classic</pre>
 </div>
-<div created="20210204101430187" creator="Strange Squirrel" modified="20210204101719603" modifier="Strange Squirrel" title="Get Sunrise and Sunset times">
+<div created="20210204101430187" creator="Strange Squirrel" modified="20210204101917401" modifier="Strange Squirrel" title="Get Sunrise and Sunset times">
 <pre>To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I use the sunrise global variable for my [[Personal Sunrise]] task, and I use sunset for automatically switching lights on when I'm working.
+
+Start by making a new task. Call it Get Sunrise/Sunset or something.
 
 !!!AutoWeb
 You need to put your latitude and longitude in to AutoWeb get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called %LOC, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called %location to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you %location1, which contains you latitude, and %location2, which contains your longitude.
