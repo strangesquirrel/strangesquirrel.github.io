@@ -365,6 +365,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>Get Sunrise and Sunset times</li>
+
 <li>Getting Away From My Phone</li>
 
 <li>GettingStarted</li>
@@ -13443,7 +13445,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210204095522309" creator="Strange Squirrel" list="[[Personal Sunrise]] Tasker Welcome" modified="20210204095534177" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210204095522309" creator="Strange Squirrel" list="[[Get Sunrise and Sunset times]] [[Personal Sunrise]] Tasker Welcome" modified="20210204101426586" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13897,6 +13899,27 @@ exports.context = contextWidget;
 </div>
 <div bag="default" created="20200127165334843" modified="20200808142340054" revision="0" tags="$:/giffmex/stroll" title="$:/view" type="text/vnd.tiddlywiki">
 <pre>classic</pre>
+</div>
+<div created="20210204101430187" creator="Strange Squirrel" modified="20210204101719603" modifier="Strange Squirrel" title="Get Sunrise and Sunset times">
+<pre>To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I use the sunrise global variable for my [[Personal Sunrise]] task, and I use sunset for automatically switching lights on when I'm working.
+
+!!!AutoWeb
+You need to put your latitude and longitude in to AutoWeb get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called %LOC, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called %location to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you %location1, which contains you latitude, and %location2, which contains your longitude.
+
+Put those into AutoWeb's Sunrise/Sunset API, and you'll get two variables out, %sunrise and %sunset. This is great but it's not quite in a format that we can use yet so we need to do a little bit of work on these.
+
+first of all, they're in 12-hour format, and we need them in 24-hour. Second, they use a colon between the hour and minute, which is pretty standard, but Tasker uses a . instead so we'll have to fix that too.
+
+!!!Formatting the time so that it works in Tasker
+So you'll want to do the following twice, one for %sunrise and one for %sunset (I will use %sunrise as the example). First do a Variable Split using : as the splitter. So now you have %sunrise1 containing the hour (in 12-hour format), %sunrise2 containing the minutes. and %sunrise3 containing either AM or PM.
+
+So do a Variable Add that will add 12 to %sunrise1 ''if'' %sunrise3 matches PM. Then do a Variable Set, to set a variable called %Sunrise to %sunrise1.%sunrise2 so that we have the 24-hour time, with a dot between the hours and minutes. (note it's %Sunrise with a capital S so that it's a global variable and we can use it back in our other task) 
+
+Thinking about this last part practically, you probably didn't really need to do the check with adding 12 to the hour for the sunrise, and you probably could just always add 12 to the hour for sunset. Because how often does the sun rise in the afternoon and set in the morning? But I dunno, why not do these things properly.
+
+!!!Daylight Savings
+Last thing, and this part annoys me a little bit, is that these times haven't factored in any daylight-savings. So when it's British Summer Time here, I have to add one to each of the variables (and I don't need to bother when we're on normal GMT). I've just got two more Variable Add actions that do this, and I enable and disable them as needed. Only need to do it twice a year so it's not too big a deal.
+</pre>
 </div>
 <div created="20210130151640524" creator="Strange Squirrel" modified="20210131095404563" modifier="Strange Squirrel" title="Getting Away From My Phone">
 <pre>I'm not sure how long I used to spend every day on my phone, but I bet it would be around 2-3 hours on average. My free time wasted on  Reddit or Twitter, at best being very mildly entertained and at worst being made annoyed at things on the Internet. It never helped me to recharge after work, or actually provide any real fun or fulfillment. It was empty hours wasted scrolling through rubbish.
