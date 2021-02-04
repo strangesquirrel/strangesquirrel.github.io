@@ -13443,7 +13443,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210204095522309" creator="Strange Squirrel" list="Tasker Welcome" modified="20210204095522309" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210204095522309" creator="Strange Squirrel" list="[[Personal Sunrise]] Tasker Welcome" modified="20210204095534177" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -13962,7 +13962,7 @@ This way, anything that caught your eye is easily captured into your catch-all [
 
 I really like this process because it gives me a little mini-magazine, almost always guaranteed to contain articles I want to read but that I am never expecting thanks to random setting on P2K. And then once I've read, I stop. No distractions. And if I see something I want to keep/research, I just highlight it real quick. No distractions. It's fun, gives me a little something to look forward to reading each day, and actually provides me with little sparks of ideas that actually have the chance to grow into something, thanks to being able to quickly capture them into the bullet journal. Much better than endlessly scrolling and clicking and getting excited but forgetting where you saw the thing.</pre>
 </div>
-<div created="20210202213616728" creator="Strange Squirrel" modified="20210202223840684" modifier="Strange Squirrel" title="Personal Sunrise">
+<div created="20210202213616728" creator="Strange Squirrel" modified="20210204100923628" modifier="Strange Squirrel" title="Personal Sunrise">
 <pre>I am absolutely a night owl and have always difficult to get up on a morning, and this method has made this much more bearable. I have Phillips Hue lighting and so I use a plugin called AutoHue for Tasker that actually controls the lights.
 
 The idea behind this Profile is to have a light in my room imitate a sort of mini-sunrise shortly before I'm due to get up, so that I never have to get up in the dark (which I hate doing). The thing here is that I wouldn't want to do this if it's already light out, so I want to so a quick check for that.
@@ -14000,9 +14000,19 @@ Last thing, and this part annoys me a little bit, is that these times haven't fa
 
 So let's assume for this part that we're going to get up at a set time every day, say 7:30. We want to run our sunrise task 10 minutes before that, at 7:20. Because it's the kind of thing I might want to change now and then, go an make a variable (not in a task or anything, in the VARS tab) called %alarmMinusTen or something, and set this to 7.20 (with a dot, not a colon). Then create a new profile, based on Time, and set the from and to times both to %alarmMinusTen, then have it trigger the sunrise task that we half-set up earlier. We'll finish it off now.
 
-!!!Conditional sunrise
+!!!With Sleep As Android
 
-You just need to put 1 action right at the start of this task: a Stop action with an if condition like this: %TIME &gt; %Sunrise. %TIME is Tasker's built-in global variable for the current time, so this is asking if the current time is greater than (ie after) today's sunrise, and if it is, just stop the task. Make sure this is step in the task.
+If you're Using Sleep As Android as your alarm time, you'll save yourself some manual input in Tasker. Sleep As Android has a feature called ''Smart Period'', which among other things, is capable of acting as a trigger for Tasker to start a task.
+
+To have Tasker use this as a trigger, don't set up an %alarmMinusTen variable, set up a profile to trigger on an Event, and search through plugins for Sleep As Android, then for the Smart Period event. Now when you trigger this to you sunrise task, it will start running 45 minutes before whatever you've set your alarm to be in Sleep As Android
+
+Now, we only want to start doing things ten minutes before but that's an easy fix. Add a ``wait`` action right at the start of the sunrise task, and set it to wait 35 minutes. So now your sunrise task will fire 45 minutes before your alarm, Tasker will just wait and do nothing for 35 minutes, and then, with 10 minutes left to go, it will carry out the rest of the steps.
+
+!!!No sunrise if it's already light out
+
+If it's always dark in your room you might like to have your sunrise task run regardless, but for me, I'd rather not bother with lights coming on if it's already light in my room when I need to get up. So I add one condition to the start of the task to check this.
+
+You just need to put 1 action right at the start of this task: a Stop action with an if condition like this: %TIME &gt; %Sunrise. %TIME is Tasker's built-in global variable for the current time, so this is asking if the current time is greater than (ie after) today's sunrise, and if it is, just stop the task. Make sure this is step one in the task.
 
 And that will do. A task that fires 10 minutes before your alarm, checks to make sure the sun isn't already up, and if it isn't, gives you a mini sunrise using your Hue light.
 
