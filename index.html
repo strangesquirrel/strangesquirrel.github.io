@@ -287,6 +287,8 @@ Error message and password prompt
 
 <li>$:/plugins/flibbles/relink</li>
 
+<li>$:/plugins/flibbles/relink-markdown</li>
+
 <li>$:/plugins/nico/notebook-mobile</li>
 
 <li>$:/plugins/snowgoon88/edit-comptext</li>
@@ -307,7 +309,21 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/markdown</li>
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink-markdown</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink-titles</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/googleanalytics</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/menubar</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/twitter</li>
+
+<li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/xlsx-utils</li>
 
 <li>$:/state/addplugins/tab-1342078386</li>
 
@@ -319,7 +335,9 @@ Error message and password prompt
 
 <li>$:/state/palettemanager/showexternal</li>
 
-<li>$:/state/plugin-info--896887961-$:/plugins/flibbles/relink</li>
+<li>$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs</li>
+
+<li>$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs--1981748087</li>
 
 <li>$:/state/showeditpreview</li>
 
@@ -11887,7 +11905,7 @@ exports.context = contextWidget;
 
 })();</pre>
 </div>
-<div author="Flibbles" core-version="&gt;=5.1.14" created="20201215235344179" demo="http://flibbles.github.io/tw5-relink/" dependents="" description="Flexibility when relinking renamed tiddlers" list="readme configuration license" name="Relink" plugin-type="plugin" source="https://github.com/flibbles/tw5-relink" title="$:/plugins/flibbles/relink" type="application/json" version="1.10.2">
+<div author="Flibbles" core-version="&gt;=5.1.14" demo="http://flibbles.github.io/tw5-relink/" dependents="" description="Flexibility when relinking renamed tiddlers" list="readme configuration license" name="Relink" plugin-type="plugin" source="https://github.com/flibbles/tw5-relink" title="$:/plugins/flibbles/relink" type="application/json" version="1.10.2">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/flibbles/relink/js/bulkops.js&quot;: {
@@ -12693,6 +12711,64 @@ exports.context = contextWidget;
             &quot;text&quot;: &quot;.tc-relink-references {\n}\n\n.tc-relink-references-table {\n\twidth: 100%;\n\tborder: none;\n}\n\n.tc-relink-references-table td {\n\tborder-left: none;\n}\n\n.tc-relink-references-table tr:first-child td {\n\tborder-top: none;\n}\n\n.tc-relink-references-title {\n\ttext-align: left;\n\tvertical-align: top;\n}\n\n.tc-relink-references-occurrence {\n\tfont-style: italic;\n\ttext-align: left;\n\tfont-weight: 200;\n\tpadding-left: 25px;\n\tvertical-align: top;\n}\n\n.tc-relink-header-plugin {\n\ttext-align: left;\n}\n\n.tc-relink-header-plugin button {\n\twidth: 100%\n}\n\n.tc-relink-column-type {\n\twidth: 8em;\n}\n\n.tc-relink-column-type select {\n\twidth: 100%;\n}\n\n.tc-relink-column-delete {\n\tborder-left: none;\n\ttext-align: left;\n}\n\n.tc-relink-column-delete button {\n\tpadding-left: 1em;\n}\n\n.tc-relink-impossible a.tc-tiddlylink {\n\tcolor: red;\n}\n&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
             &quot;type&quot;: &quot;text/css&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="Flibbles" core-version="&gt;=5.1.14" dependents="" description="Markdown support for Relink" list="readme" name="Relink Markdown" parent-plugin="$:/plugins/flibbles/relink" plugin-type="plugin" source="https://github.com/flibbles/tw5-relink" title="$:/plugins/flibbles/relink-markdown" type="application/json" version="1.10.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/flibbles/relink/js/fieldtypes/markdown.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/fieldtypes/markdown.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkfieldtype\ntitle: $:/plugins/flibbles/relink/js/fieldtypes/markdown.js\ntype: application/javascript\n\nThis relinks tiddlers which contain markdown. It tries to be agnostic to\nwhichever markdown plugin you're using.\n\n\\*/\n\nvar EntryNode = require('$:/plugins/flibbles/relink/js/utils/entry');\nvar Rebuilder = require(\&quot;$:/plugins/flibbles/relink/js/utils/rebuilder.js\&quot;);\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown.js\&quot;);\nvar WikiParser = require(\&quot;$:/core/modules/parsers/wikiparser/wikiparser.js\&quot;)['text/vnd.tiddlywiki'];\n\nvar MarkdownEntry = EntryNode.newType(\&quot;markdown\&quot;);\n\nfunction MarkdownRelinker(text, fromTitle, toTitle, options) {\n\tthis.wiki = options.wiki;\n\tthis.entry = new MarkdownEntry();\n\tthis.builder = new Rebuilder(text);\n\tthis.fromTitle = fromTitle;\n\tthis.toTitle = toTitle;\n\tthis.options = options;\n\tif(!this.mdInlineRuleClasses) {\n\t\tMarkdownRelinker.prototype.mdInlineRuleClasses = $tw.modules.createClassesFromModules(\&quot;relinkmarkdownrule\&quot;,\&quot;inline\&quot;,$tw.MarkdownRuleBase);\n\t}\n\tif(!this.mdBlockRuleClasses) {\n\t\tMarkdownRelinker.prototype.mdBlockRuleClasses = $tw.modules.createClassesFromModules(\&quot;relinkmarkdownrule\&quot;,\&quot;block\&quot;,$tw.MarkdownRuleBase);\n\t}\n\tthis.source = text || \&quot;\&quot;;\n\tthis.sourceLength = this.source.length;\n\t// Set current parse position\n\tthis.pos = 0;\n\t// Instantiate the parser block and inline rules\n\tthis.blockRules = this.instantiateRules(this.mdBlockRuleClasses,\&quot;block\&quot;,0);\n\tthis.inlineRules = this.instantiateRules(this.mdInlineRuleClasses,\&quot;inline\&quot;,0);\n\t// instantiateRules first with indent==undefined so we can match regardless\n\t// of tabdepth. Now we need to be strict about it.\n\tthis.indent = 0;\n\tthis.parseBlocks();\n};\n\nMarkdownRelinker.prototype = Object.create(WikiParser.prototype);\n\nmodule.exports\n\nMarkdownRelinker.prototype.parseBlock = function(terminatorRegExpString) {\n\tvar terminatorRegExp = /([^\\S\\n]*\\r?\\n)/mg;\n\tthis.skipEmptyLines();\n\tif(this.pos &gt;= this.sourceLength) {\n\t\treturn [];\n\t}\n\t// Look for a block rule that applies at the current position\n\tvar nextMatch = this.findNextMatch(this.blockRules, this.pos);\n\tif(nextMatch &amp;&amp; nextMatch.matchIndex === this.pos) {\n\t\treturn this.relinkRule(nextMatch);\n\t}\n\treturn this.parseInlineRun(terminatorRegExp);\n};\n\nMarkdownRelinker.prototype.relinkRule = function(ruleInfo) {\n\tvar newEntry = ruleInfo.rule.relink(this.source, this.fromTitle, this.toTitle, this.options);\n\tif (newEntry !== undefined) {\n\t\tthis.entry.add(newEntry);\n\t\tif (newEntry.output) {\n\t\t\tthis.builder.add(newEntry.output, ruleInfo.matchIndex, this.pos);\n\t\t}\n\t}\n};\n\nMarkdownRelinker.prototype.parseInlineRunTerminated = function(terminatorRegExp,options) {\n\toptions = options || {};\n\tvar tree = [];\n\t// Find the next occurrence of the terminator\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar terminatorMatch = terminatorRegExp.exec(this.source);\n\t// Find the next occurrence of a inlinerule\n\tvar inlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; (terminatorMatch || inlineRuleMatch)) {\n\t\t// Return if we've found the terminator, and it precedes any inline rule match\n\t\tif(terminatorMatch) {\n\t\t\tif(!inlineRuleMatch || inlineRuleMatch.matchIndex &gt;= terminatorMatch.index) {\n\t\t\t\tthis.relinkWikitext(this.pos, terminatorMatch.index);\n\t\t\t\t//if(options.eatTerminator) {\n\t\t\t\t\tthis.pos += terminatorMatch[0].length;\n\t\t\t\t//}\n\t\t\t\treturn tree;\n\t\t\t}\n\t\t}\n\t\t// Process any inline rule, along with the text preceding it\n\t\tif(inlineRuleMatch) {\n\t\t\t// Preceding text\n\t\t\tthis.relinkWikitext(this.pos, inlineRuleMatch.matchIndex);\n\t\t\tthis.relinkRule(inlineRuleMatch);\n\t\t\t// Look for the next inline rule\n\t\t\tinlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t\t\t// Look for the next terminator match\n\t\t\tterminatorRegExp.lastIndex = this.pos;\n\t\t\tterminatorMatch = terminatorRegExp.exec(this.source);\n\t\t}\n\t}\n\t// Process the remaining text\n\tthis.relinkWikitext(this.pos, this.sourceLength);\n\treturn tree;\n};\n\nMarkdownRelinker.prototype.skipEmptyLines = function() {\n\tvar emptyRegExp = /(?:[^\\S\\n]*\\n)+/mg;\n\temptyRegExp.lastIndex = this.pos;\n\tvar emptyMatch = emptyRegExp.exec(this.source);\n\tif(emptyMatch &amp;&amp; emptyMatch.index === this.pos) {\n\t\tthis.pos = emptyRegExp.lastIndex;\n\t}\n};\n\nMarkdownRelinker.prototype.relinkWikitext = function(startPos, end) {\n\tif (startPos &lt; end) {\n\t\tvar config = utils.getSettings(this.wiki);\n\t\tif (config.wikitext) {\n\t\t\tvar substr = this.source.substring(this.pos, end);\n\n\t\t\tvar pragma = config.wikitextPragma;\n\t\t\tvar wikitextHandler = this.options.settings.getType('wikitext');\n\t\t\tvar wikiEntry = wikitextHandler.relink(pragma + substr, this.fromTitle, this.toTitle, this.options);\n\t\t\tif (wikiEntry != undefined) {\n\t\t\t\tthis.entry.add(wikiEntry);\n\t\t\t\tif (wikiEntry.output) {\n\t\t\t\t\tthis.builder.add(wikiEntry.output.slice(pragma.length), startPos, end);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tthis.pos = end;\n}\n\nexports.name = \&quot;markdown\&quot;;\n\nexports.relink = function(markdowntext, fromTitle, toTitle, options) {\n\tvar relinker = new MarkdownRelinker(markdowntext, fromTitle, toTitle, options);\n\tvar entry = relinker.entry;\n\tif (entry.children.length &gt; 0) {\n\t\tentry.output = relinker.builder.results();\n\t\treturn entry;\n\t}\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkfieldtype&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js\ntype: application/javascript\n\n```javascript\ncode\n```\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nexports.name = \&quot;codeblock\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /(```+)[^\\n`]*(?:\\n|$)/mg;\n\tthis.maxIndent = 3;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar endRegExp = new RegExp(\&quot;^ {0,3}\&quot; + this.match[1] + \&quot;+[^\\\\S\\\\n]*\\\\n\&quot;, \&quot;mg\&quot;);\n\tendRegExp.lastIndex = this.matchRegExp.lastIndex;\n\tvar endMatch = endRegExp.exec(this.parser.source);\n\tif (endMatch) {\n\t\tthis.parser.pos = endRegExp.lastIndex;\n\t} else {\n\t\tthis.parser.pos = this.parser.sourceLength;\n\t}\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js\ntype: application/javascript\n\nHandles markdown `code` and ``code``.\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nexports.name = \&quot;codeinline\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n};\n\nexports.findNextMatch = function(startPos) {\n\tvar match, matchRegExp = /`+/mg;\n\tmatchRegExp.lastIndex = startPos;\n\twhile (match = matchRegExp.exec(this.parser.source)) {\n\t\tvar next = this.parser.source.indexOf(match[0], matchRegExp.lastIndex);\n\t\t// make sure we find the corresponding ticks\n\t\tif (next &gt;= 0) {\n\t\t\t// Make sure it's the right length\n\t\t\tvar end = next + match[0].length;\n\t\t\tif (match[0].length &lt; 3 || !isLineStart(this.parser.source, next)) {\n\t\t\t\tif (this.parser.source.charAt(end) !== '`') {\n\t\t\t\t\t// make sure there aren't paragraph breaks between the points\n\t\t\t\t\tvar nextGraph = utils.indexOfParagraph(this.parser.source, matchRegExp.lastIndex);\n\t\t\t\t\tif (nextGraph &lt; 0 || nextGraph &gt; next) {\n\t\t\t\t\t\tthis.end = end;\n\t\t\t\t\t\treturn match.index;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn undefined;\n};\n\nfunction isLineStart(text, pos) {\n\t// if 3 or less spaces precede it, it's a line start.\n\tvar p = text.lastIndexOf('\\n', pos);\n\tif (pos - p &gt; 3) {\n\t\treturn false;\n\t}\n\twhile (++p &lt; pos) {\n\t\tif (text.charAt(p) !== ' ') {\n\t\t\treturn false;\n\t\t}\n\t}\n\treturn true;\n};\n\nexports.relink = function() {\n\tthis.parser.pos = this.end;\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js\ntype: application/javascript\n\nHandles markdown footnotes\n\n[1]: #link\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nfunction FootnoteEntry() {};\nFootnoteEntry.prototype.name = \&quot;markdownfootnote\&quot;;\nFootnoteEntry.prototype.report = function() {\n\treturn [\&quot;[\&quot; + utils.abridge(this.caption) + \&quot;]:\&quot;];\n};\n\nexports.name = \&quot;markdownfootnote\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /\\[((?:[^\\\\\\]]|\\\\.)*)\\]:(\\s*)(#?)(\\S+)([^\\S\\n]*(?:\\n|$))/mg;\n\tthis.maxIndent = 3;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar m = this.match,\n\t\tlink = m[4],\n\t\tentry;\n\tthis.parser.pos = m.index + m[0].length;\n\tif (m[1].charAt(0) !== \&quot;^\&quot;\n\t &amp;&amp; (m[3] === \&quot;#\&quot; || options.wiki.isImageTiddler(toTitle))\n\t &amp;&amp; decodeURIComponent(link) === fromTitle) {\n\t\tentry = new FootnoteEntry();\n\t\tentry.caption = m[1];\n\t\tentry.output = this.indentString + \&quot;[\&quot; + m[1] + \&quot;]:\&quot; + m[2] + m[3] + utils.encodeLink(toTitle) + m[5];\n\t}\n\treturn entry;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js\ntype: application/javascript\n\nHandles markdown links\n\n[caption](#link)\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\nvar settings = require(\&quot;$:/plugins/flibbles/relink/js/settings\&quot;);\nvar markdown = settings.getType('markdown');\n\nfunction LinkEntry() {};\nLinkEntry.prototype.name = \&quot;markdownlink\&quot;;\nLinkEntry.prototype.report = function() {\n\tvar output = [];\n\tvar hash = '#';\n\tif (this.prefix) {\n\t\thash = '';\n\t}\n\tif (this.captionEntry) {\n\t\tvar self = this;\n\t\t$tw.utils.each(this.captionEntry.report(), function(report) {\n\t\t\toutput.push(self.prefix+\&quot;[\&quot; + (report || '') + \&quot;](\&quot; + hash + self.link + \&quot;)\&quot;);\n\t\t});\n\t};\n\tif (this.linkChanged) {\n\t\tvar safeCaption = utils.abridge(this.caption);\n\t\toutput.push(this.prefix+\&quot;[\&quot; + safeCaption + \&quot;](\&quot; + hash + \&quot;)\&quot;);\n\t}\n\treturn output;\n};\n\nLinkEntry.prototype.eachChild = function(method) {\n\tif (this.captionEntry) {\n\t\tmethod(this.captionEntry);\n\t}\n};\n\nexports.name = \&quot;markdownlink\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.endMatch = this.matchLink(this.parser.source, startPos);\n\treturn this.endMatch ? this.endMatch.index : undefined;\n};\n\nexports.survey = function(text) {\n\treturn this.matchLink(text, 0);\n};\n\n/**A zero side-effect method which returns a regexp which pretended to match\n * the whole link, caption and all. I do this instead of just using a\n * regexp to begin with, because markdown links require context-free grammar\n * matching.\n * Currently, it doesn't properly set match[0]. No need as of yet.\n * 1. \&quot;!\&quot;\n * 2. caption\n * 3. \&quot;\\s*#?\&quot;\n * 4. \&quot;link\&quot;\n * 5. \&quot;\\s*'tooltip'\&quot;\n */\nexports.matchLink = function(text, pos) {\n\tpos = pos-1;\n\tvar match = undefined;\n\tdo {\n\t\tpos = text.indexOf('[', pos+1);\n\t\tif (pos &lt; 0) {\n\t\t\treturn undefined;\n\t\t}\n\t\tvar caption = this.getEnclosed(text, pos, '[', ']');\n\t\tif (caption === undefined) {\n\t\t\tcontinue;\n\t\t}\n\t\tvar linkStart = pos + caption.length+2;\n\t\tif (text.charAt(linkStart) !== '(') {\n\t\t\tcontinue;\n\t\t}\n\t\t// match[1] and match[2] are the \&quot;!\&quot; and \&quot;caption\&quot;, filled in later.\n\t\tvar regExp = /\\(()()(\\s*#?)((?:[^\\s\\(\\)]|\\([^\\s\\(\\)]*\\))+)((?:\\s+(?:'(?:[^'\\\\]|\\\\.)*'|\&quot;(?:[^\&quot;\\\\]|\\\\.)*\&quot;|\\([^)]*\\)))?\\s*)\\)/g;\n\t\tregExp.lastIndex = linkStart;\n\t\tmatch = regExp.exec(text);\n\t\tif (match &amp;&amp; match.index === linkStart &amp;&amp; utils.indexOfParagraph(match[0]) &lt; 0) {\n\t\t\tmatch[2] = caption;\n\t\t\tif (text.charAt(pos-1) === \&quot;!\&quot;) {\n\t\t\t\tmatch.index = pos-1;\n\t\t\t\tmatch[1] = \&quot;!\&quot;;\n\t\t\t} else {\n\t\t\t\tmatch.index = pos;\n\t\t\t}\n\t\t} else {\n\t\t\tmatch = undefined;\n\t\t}\n\t} while (!match);\n\treturn match;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar entry = new LinkEntry(),\n\t\tem = this.endMatch,\n\t\tmodified = false,\n\t\tcaption = em[2],\n\t\timage = (em[1] === '!'),\n\t\tlink = em[4];\n\tthis.parser.pos = em.index + em[1].length + caption.length + em[0].length + 2;\n\tif (!image) {\n\t\tvar newCaption = markdown.relink(caption, fromTitle, toTitle, options);\n\t\tif (newCaption) {\n\t\t\tmodified = true;\n\t\t\tentry.captionEntry = newCaption;\n\t\t\tif (newCaption.output) {\n\t\t\t\tif (this.canBeCaption(newCaption.output)) {\n\t\t\t\t\tcaption = newCaption.output;\n\t\t\t\t} else {\n\t\t\t\t\tnewCaption.impossible = true;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t// I don't know why internal images links don't use the '#', but links\n\t// do, but that's just how it is.\n\tif (image !== (em[3].lastIndexOf('#') &gt;=0)) {\n\t\ttry {\n\t\t\tif (decodeURIComponent(link) === fromTitle) {\n\t\t\t\tmodified = true;\n\t\t\t\tentry.linkChanged = true;\n\t\t\t\tlink = utils.encodeLink(toTitle);\n\t\t\t}\n\t\t} catch (e) {\n\t\t\t// It must be a malformed link. Not our problem.\n\t\t\t// Keep going in case the caption needs relinking.\n\t\t}\n\t}\n\tif (modified) {\n\t\tentry.link = link;\n\t\tentry.caption = caption;\n\t\tentry.prefix = em[1];\n\t\t// This way preserves whitespace\n\t\tentry.output = em[1]+\&quot;[\&quot;+caption+\&quot;](\&quot;+em[3]+link+em[5]+\&quot;)\&quot;;\n\t\treturn entry;\n\t}\n\treturn undefined;\n};\n\nexports.canBeCaption = function(caption) {\n\treturn this.indexOfClose(caption+']', -1, '[', ']') === caption.length;\n};\n\nexports.getEnclosed = function(text, pos, openChar, closeChar) {\n\tvar capEnd = this.indexOfClose(text, pos, openChar, closeChar);\n\tif (capEnd &lt; 0) {\n\t\treturn undefined;\n\t}\n\tvar enclosed = text.substring(pos+1, capEnd);\n\tif (enclosed.match(/\\n\\s*\\n/)) {\n\t\t// Paragraph breaks are not allowed\n\t\treturn undefined;\n\t}\n\treturn enclosed;\n};\n\nexports.indexOfClose = function(text, pos, openChar, closeChar) {\n\tvar close = pos-1,\n\t\topen = pos; // First char is open\n\tdo {\n\t\tclose = text.indexOf(closeChar, close+1);\n\t\tif (close &lt; 0) {\n\t\t\treturn -1;\n\t\t}\n\t\topen = text.indexOf(openChar, open+1);\n\t} while (open &gt;= 0 &amp;&amp; open &lt;= close);\n\treturn close;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js\ntype: application/javascript\nmodule-type: global\n\nBase class for markdown parser rules\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nvar MarkdownRuleBase = function() {};\n\nMarkdownRuleBase.prototype.init = function(parser) {\n\tthis.parser = parser;\n};\n\nMarkdownRuleBase.prototype.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\twhile (this.match = this.matchRegExp.exec(this.parser.source)) {\n\t\tif (utils.indexOfParagraph(this.match[0]) &gt;= 0) {\n\t\t\tcontinue;\n\t\t}\n\t\tif (this.maxIndent !== undefined) {\n\t\t\tvar indent = utils.indentation(this.parser.source,this.match.index);\n\t\t\tif (indent &lt; 0\n\t\t\t || (this.parser.indent !== undefined\n\t\t\t  &amp;&amp; (indent &gt; this.parser.indent + this.maxIndent))) {\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tvar nl = this.parser.source.lastIndexOf('\\n', this.match.index-1)+1;\n\t\t\tthis.indentString = this.parser.source.substring(nl, this.match.index);\n\t\t\treturn nl &lt; startPos ? startPos : nl;\n\t\t}\n\t\treturn this.match.index;\n\t}\n\treturn undefined;\n};\n\n\nexports.MarkdownRuleBase = MarkdownRuleBase;\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;global&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinktextoperator\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js\ntype: application/javascript\n\nThis relinks tiddlers which contain markdown. It tries to be agnostic to\nwhichever markdown plugin you're using.\n\n\\*/\n\n/*jslint node: false, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Placeholder = require(\&quot;$:/plugins/flibbles/relink/js/utils/placeholder.js\&quot;);\nvar settings = require('$:/plugins/flibbles/relink/js/settings.js');\nvar markdownHandler = settings.getType('markdown');\n\nexports[\&quot;text/x-markdown\&quot;] = function(tiddler, fromTitle, toTitle, options) {\n\tvar placeholder = new Placeholder();\n\tvar extraOptions = $tw.utils.extend(\n\t\t{\n\t\t\tcurrentTiddler: tiddler.fields.title,\n\t\t\tplaceholder: placeholder\n\t\t}, options);\n\tvar entry = markdownHandler.relink(tiddler.fields.text, fromTitle, toTitle, extraOptions);\n\tif (entry &amp;&amp; entry.output) {\n\t\t// If there's output, we've also got to prepend any macros\n\t\t// that the placeholder defined.\n\t\tvar preamble = placeholder.getPreamble();\n\t\tentry.output = preamble + entry.output\n\t}\n\treturn entry;\n};\n\n&quot;,
+            &quot;module-type&quot;: &quot;relinktextoperator&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/utils/markdown.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/utils/markdown.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: library\ntitle: $:/plugins/flibbles/relink/js/utils/markdown.js\ntype: application/javascript\n\nMethods used in markdown parsing.\n\n\\*/\n\n// tiddlywiki/markdown can't handle having these characters escaped, so we\n// need to unescape them.\nvar problemChars = {\n\t\&quot;23\&quot;: \&quot;#\&quot;,\n\t\&quot;24\&quot;: \&quot;$\&quot;,\n\t\&quot;26\&quot;: \&quot;&amp;\&quot;,\n\t\&quot;2B\&quot;: \&quot;+\&quot;,\n\t\&quot;2C\&quot;: \&quot;,\&quot;,\n\t\&quot;2F\&quot;: \&quot;/\&quot;,\n\t\&quot;3A\&quot;: \&quot;:\&quot;,\n\t\&quot;3B\&quot;: \&quot;;\&quot;,\n\t\&quot;3D\&quot;: \&quot;=\&quot;,\n\t\&quot;3F\&quot;: \&quot;?\&quot;,\n\t\&quot;40\&quot;: \&quot;@\&quot;,\n};\n\nexports.encodeLink = function(title) {\n\tvar encoded = encodeURIComponent(title),\n\t\tbalance = 0;\n\tencoded = encoded.replace(/[\\(\\)]/g, function(p) {\n\t\tif (p === '(') {\n\t\t\tif (balance &gt;=1) {\n\t\t\t\treturn '%28';\n\t\t\t} else {\n\t\t\t\tbalance++;\n\t\t\t}\n\t\t} else {\n\t\t\tif (balance &lt;= 0) {\n\t\t\t\treturn '%29';\n\t\t\t}\n\t\t\tbalance--;\n\t\t}\n\t\treturn p;\n\t});\n\twhile (balance--) {\n\t\tvar i = encoded.lastIndexOf('(');\n\t\tencoded = encoded.substr(0, i) + '%28' + encoded.substr(i+1);\n\t}\n\t// tiddlywiki/markdown can't handle these characters escaped\n\treturn encoded.replace(/%([0-9A-F]{2})/g, function(str, code) {\n\t\treturn problemChars[code] || str;\n\t});\n};\n\n// Returns index of next paragraph, or -1\nexports.indexOfParagraph = function(text, startPos) {\n\tvar regExp = /\\n\\s*\\n/mg;\n\tregExp.lastIndex = startPos || 0;\n\tvar match = regExp.exec(text);\n\treturn match ? regExp.lastIndex : -1;\n};\n\n/** Returns how much indentation there is between pos and the previous\n * newline (or other char).\n * tabs are counted as 4 chars.\n */\nexports.indentation = function(text, pos, startChar) {\n\tvar p = text.lastIndexOf(startChar || '\\n', pos-1);\n\tvar count = 0;\n\twhile (++p &lt; pos) {\n\t\tvar c = text.charAt(p);\n\t\tif (c === ' ') {\n\t\t\tcount++;\n\t\t} else if (c === '\\t') {\n\t\t\tcount = count + 4 - (count%4);\n\t\t} else {\n\t\t\treturn -1;\n\t\t}\n\t}\n\treturn count;\n};\n\n\nexports.getSettings = function(wiki) {\n\t// Stored here so it's only calculated once, but also so it's different\n\t// per tiddler for testing\n\tif (wiki._markdownSettings === undefined) {\n\t\tvar settings = Object.create(null);\n\t\tvar text = wiki.getTiddlerText(\&quot;$:/config/markdown/renderWikiText\&quot;);\n\t\tsettings.wikitext =  (text === undefined || text.toLowerCase() === \&quot;true\&quot;);\n\t\ttext = wiki.getTiddlerText(\&quot;$:/config/markdown/renderWikiTextPragma\&quot;);\n\t\tif (text) {\n\t\t\ttext = text.trim() + '\\n';\n\t\t} else {\n\t\t\ttext = '';\n\t\t}\n\t\tsettings.wikitextPragma = text;\n\t\twiki._markdownSettings = settings;\n\t}\n\treturn wiki._markdownSettings;\n};\n\n// This is the maximum length a reported caption may be\nexports.captionLength = 15;\n\n/** Abridges a string to one that is more log-friendly.\n */\nexports.abridge = function(string) {\n\tvar safe = string.replace(/\\s+/mg, ' ');\n\tif (safe.length &gt; this.captionLength) {\n\t\tsafe = safe.substr(0, this.captionLength) + \&quot;...\&quot;;\n\t}\n\treturn safe;\n};\n\n/**I don't actually use this, but I've kept the code around anyway.\n * The only time this plugin is installed and markdown isn't enabled would\n * be if the user forgot to install a markdown plugin, or they disabled it.\n * I GUESS Relink should still be Relinking markdown in that case.\n */\nexports.markdownEnabled = function() {\n\tif (_enabled === undefined) {\n\t\tvar test = $tw.wiki.renderText(\&quot;text/html\&quot;, \&quot;text/x-markdown\&quot;, \&quot;[test](#test)\&quot;);\n\t\t_enabled = (test.indexOf(\&quot;&lt;a\&quot;) &gt;= 0);\n\t}\n\treturn _enabled;\n};\nvar _enabled;\n&quot;,
+            &quot;module-type&quot;: &quot;library&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-markdown/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-markdown/readme&quot;,
+            &quot;text&quot;: &quot;Markdown support for Relink.\n\n...or Relink support for Markdown.\n\nThis supplimental plugin allows ''text/x-markdown'' files to be relinked. This means markdown linking syntax like `[Caption](#MyTiddler)` is supported. If your markdown supports wikitext markup as well, this will handle that too.\n\nThis plugin is designed for `tiddlywiki/markdown`, but it will also work for `anstosa/tw5-markdown` and others.\n&quot;
         }
     }
 }</pre>
@@ -13608,26 +13684,50 @@ exports.context = contextWidget;
 <div bag="default" created="20200414222832782" modified="20210129213506442" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>Third Brain</pre>
 </div>
-<div created="20210206140521979" creator="Strange Squirrel" modified="20210206140521979" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/markdown">
+<div created="20210206140815493" creator="Strange Squirrel" modified="20210206140815493" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink">
 <pre>yes</pre>
 </div>
-<div created="20210206140454946" creator="Strange Squirrel" modified="20210206140458485" modifier="Strange Squirrel" title="$:/state/addplugins/tab-1342078386">
+<div created="20210206140825015" creator="Strange Squirrel" modified="20210206140825015" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink-markdown">
+<pre>yes</pre>
+</div>
+<div created="20210206140841809" creator="Strange Squirrel" modified="20210206140841809" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://flibbles.github.io/tw5-relink/library/index.html/$:/temp/RemoteAssetInfo/https://flibbles.github.io/tw5-relink/library/index.html/$:/plugins/flibbles/relink-titles">
+<pre>yes</pre>
+</div>
+<div created="20210206140624042" creator="Strange Squirrel" modified="20210206140632625" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks">
+<pre>no</pre>
+</div>
+<div created="20210206140636842" creator="Strange Squirrel" modified="20210206140646779" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/googleanalytics">
+<pre>no</pre>
+</div>
+<div created="20210206140653031" creator="Strange Squirrel" modified="20210206140657333" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/menubar">
+<pre>no</pre>
+</div>
+<div created="20210206140717522" creator="Strange Squirrel" modified="20210206140717522" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/twitter">
+<pre>yes</pre>
+</div>
+<div created="20210206140722844" creator="Strange Squirrel" modified="20210206140722844" modifier="Strange Squirrel" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/xlsx-utils">
+<pre>yes</pre>
+</div>
+<div created="20210206140810943" creator="Strange Squirrel" modified="20210206140906571" modifier="Strange Squirrel" title="$:/state/addplugins/tab-1342078386">
 <pre>$:/config/OfficialPluginLibrary</pre>
 </div>
 <div created="20210130145402307" creator="Strange Squirrel" modified="20210130145405919" modifier="Strange Squirrel" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20210130150351179" creator="Strange Squirrel" modified="20210206140419563" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
+<div created="20210130150351179" creator="Strange Squirrel" modified="20210206140606236" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
-<div created="20210131151733986" creator="Strange Squirrel" modified="20210206140416646" modifier="Strange Squirrel" title="$:/state/notebook-sidebar-section">
-<pre>$:/.giffmex/sidebar/advancedconfig</pre>
+<div created="20210131151733986" creator="Strange Squirrel" modified="20210206140405827" modifier="Strange Squirrel" title="$:/state/notebook-sidebar-section">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210129225102001" creator="Geodron" modified="20210129225103374" modifier="Geodron" title="$:/state/palettemanager/showexternal">
 <pre>no</pre>
 </div>
-<div created="20210206140430339" creator="Strange Squirrel" modified="20210206140449664" modifier="Strange Squirrel" title="$:/state/plugin-info--896887961-$:/plugins/flibbles/relink">
+<div created="20210206140802959" creator="Strange Squirrel" modified="20210206140802959" modifier="Strange Squirrel" title="$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs">
 <pre>no</pre>
+</div>
+<div created="20210206140750482" creator="Strange Squirrel" modified="20210206140750482" modifier="Strange Squirrel" title="$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs--1981748087">
+<pre>history</pre>
 </div>
 <div created="20210130145342399" creator="Strange Squirrel" modified="20210130145343695" modifier="Strange Squirrel" title="$:/state/showeditpreview">
 <pre>no</pre>
@@ -13647,7 +13747,7 @@ exports.context = contextWidget;
 <div created="20210206135651869" creator="Strange Squirrel" modified="20210206135653633" modifier="Strange Squirrel" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20210129213756284" creator="Geodron" modified="20210206140423538" modifier="Strange Squirrel" title="$:/state/tab-1749438307">
+<div created="20210129213756284" creator="Geodron" modified="20210206140558966" modifier="Strange Squirrel" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20210129213808894" creator="Geodron" modified="20210129230209486" modifier="Geodron" title="$:/state/tab-2065006209">
@@ -13674,7 +13774,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210206135335694" creator="Strange Squirrel" list="$:/ControlPanel Welcome" modified="20210206140421781" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210206140556589" creator="Strange Squirrel" list="$:/plugins/wikilabs/link-to-tabs $:/ControlPanel Welcome" modified="20210206140752624" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
