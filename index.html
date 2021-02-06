@@ -13894,7 +13894,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210206223143043" creator="Strange Squirrel" list="[[Get Sunrise and Sunset times]] Tasker Welcome" modified="20210206223146272" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210206223143043" creator="Strange Squirrel" list="[[Personal Sunrise]] [[Get Sunrise and Sunset times]] Tasker Welcome" modified="20210206223340173" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14469,7 +14469,7 @@ This way, anything that caught your eye is easily captured into your catch-all [
 
 I really like this process because it gives me a little mini-magazine, almost always guaranteed to contain articles I want to read but that I am never expecting thanks to random setting on P2K. And then once I've read, I stop. No distractions. And if I see something I want to keep/research, I just highlight it real quick. No distractions. It's fun, gives me a little something to look forward to reading each day, and actually provides me with little sparks of ideas that actually have the chance to grow into something, thanks to being able to quickly capture them into the bullet journal. Much better than endlessly scrolling and clicking and getting excited but forgetting where you saw the thing.</pre>
 </div>
-<div created="20210202213616728" creator="Strange Squirrel" modified="20210204102601247" modifier="Strange Squirrel" title="Personal Sunrise">
+<div created="20210202213616728" creator="Strange Squirrel" modified="20210206223459116" modifier="Strange Squirrel" title="Personal Sunrise">
 <pre>I am absolutely a night owl and have always difficult to get up on a morning, and this method has made this much more bearable. I have Phillips Hue lighting and so I use a plugin called AutoHue for Tasker that actually controls the lights.
 
 The idea behind this Profile is to have a light in my room imitate a sort of mini-sunrise shortly before I'm due to get up, so that I never have to get up in the dark (which I hate doing). The thing here is that I wouldn't want to do this if it's already light out, so I want to so a quick check for that.
@@ -14505,7 +14505,13 @@ Now, we only want to start doing things ten minutes before but that's an easy fi
 
 If it's always dark in your room you might like to have your sunrise task run regardless, but for me, I'd rather not bother with lights coming on if it's already light in my room when I need to get up. So I add one condition to the start of the task to check this. (you need to make a task to actually [[get your sunrise time|Get Sunrise and Sunset times]] for this step to work. If you didn't set this up earlier, you'll need to do it at some point).
 
-You just need to put 1 action right at the start of this task: a Stop action with an if condition like this: %TIME &gt; %Sunrise. %TIME is Tasker's built-in global variable for the current time, so this is asking if the current time is greater than (ie after) today's sunrise, and if it is, just stop the task. Make sure this is step one in the task.
+You just need to put 1 action right at the start of this task: a Stop action with an if condition like this: 
+
+```
+%TIME &gt; %Sunrise
+```
+
+%TIME is Tasker's built-in global variable for the current time, so this is asking if the current time is greater than (ie after) today's sunrise, and if it is, just stop the task. Make sure this is step one in the task.
 
 And that will do. A task that fires 10 minutes before your alarm, checks to make sure the sun isn't already up, and if it isn't, gives you a mini sunrise using your Hue light.
 
