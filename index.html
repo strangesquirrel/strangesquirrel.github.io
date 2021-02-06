@@ -14364,22 +14364,22 @@ This gives me a little month by month view of what I'm reading, watching, playin
 I leave myself space in the 'reading' section to be able to add a quick rating (1 to 3 stars) after I've finished reading a book, and also to be able write down page numbers of pages in my bujo where I've copied down quotes or written down a few thoughts. I'm rubbish at it right now but I want to start kind of writing little book reviews for myself. If the month ends and I'm still reading a book, I'll draw a long arrow facing to the right in the space where I'd otherwise put the rating, and I'll write the title and author down again in next month's collection. If I give up on a book (doesn't happen often), I'll write DNF.
 </pre>
 </div>
-<div created="20210204101430187" creator="Strange Squirrel" modified="20210206223204965" modifier="Strange Squirrel" title="Get Sunrise and Sunset times">
+<div created="20210204101430187" creator="Strange Squirrel" modified="20210206223323510" modifier="Strange Squirrel" title="Get Sunrise and Sunset times">
 <pre>To figure this out I use an API that comes built into AutoWeb called Sunrise/Sunset. What I do here is have a Profile that runs at 1 minute past midnight every day, gets the sunrise and sunset times for the coming day, and saves these to global variables. I use the sunrise global variable for my [[Personal Sunrise]] task, and I use sunset for automatically switching lights on when I'm working.
 
 Start by making a new task. Call it Get Sunrise/Sunset or something.
 
 !!!AutoWeb
-You need to put your latitude and longitude in to AutoWeb get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called ``%LOC``, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called %location to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you %location1, which contains you latitude, and %location2, which contains your longitude.
+You need to put your latitude and longitude in to AutoWeb get the right times for where you are. This is no problem though cos they're actually something that Tasker can already get for you. There's a builtin global variable called ``%LOC``, which has your latitude and longitude separated by a comma. So first do a Set Variable action and set a local variable called ``%location`` to the same value as %LOC. Then use the Variable Split action on %location, with a ',' as the splitter, to make two new variables. This gets you`` %location1``, which contains you latitude, and ``%location2``, which contains your longitude.
 
-Put those into AutoWeb's Sunrise/Sunset API, and you'll get two variables out, %sunrise and %sunset. This is great but it's not quite in a format that we can use yet so we need to do a little bit of work on these.
+Put those into AutoWeb's Sunrise/Sunset API, and you'll get two variables out, ``%sunrise`` and ``%sunset``. This is great but it's not quite in a format that we can use yet so we need to do a little bit of work on these.
 
 first of all, they're in 12-hour format, and we need them in 24-hour. Second, they use a colon between the hour and minute, which is pretty standard, but Tasker uses a . instead so we'll have to fix that too.
 
 !!!Formatting the time so that it works in Tasker
-So you'll want to do the following twice, one for %sunrise and one for %sunset (I will use %sunrise as the example). First do a Variable Split using : as the splitter. So now you have %sunrise1 containing the hour (in 12-hour format), %sunrise2 containing the minutes. and %sunrise3 containing either AM or PM.
+So you'll want to do the following twice, one for %sunrise and one for %sunset (I will use %sunrise as the example). First do a Variable Split using : as the splitter. So now you have ``%sunrise1`` containing the hour (in 12-hour format), ``%sunrise2`` containing the minutes. and ``%sunrise3`` containing either AM or PM.
 
-So do a Variable Add that will add 12 to %sunrise1 ''if'' %sunrise3 matches PM. Then do a Variable Set, to set a variable called %Sunrise to %sunrise1.%sunrise2 so that we have the 24-hour time, with a dot between the hours and minutes. (note it's %Sunrise with a capital S so that it's a global variable and we can use it back in our other task) 
+So do a Variable Add that will add 12 to %sunrise1 ''if'' %sunrise3 matches PM. Then do a Variable Set, to set a variable called ``%Sunrise`` to %sunrise1.%sunrise2 so that we have the 24-hour time, with a dot between the hours and minutes. (note it's %Sunrise with a capital S so that it's a global variable and we can use it back in our other task) 
 
 Thinking about this last part practically, you probably didn't really need to do the check with adding 12 to the hour for the sunrise, and you probably could just always add 12 to the hour for sunset. Because how often does the sun rise in the afternoon and set in the morning? But I dunno, why not do these things properly.
 
