@@ -437,6 +437,8 @@ Error message and password prompt
 
 <li>Running Tasks from a FitBit</li>
 
+<li>Running Tasks from a Kindle</li>
+
 <li>Tasker</li>
 
 <li>Welcome</li>
@@ -13879,8 +13881,8 @@ exports.context = contextWidget;
 <div created="20210206140750482" creator="Strange Squirrel" modified="20210206140750482" modifier="Strange Squirrel" title="$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs--1981748087">
 <pre>history</pre>
 </div>
-<div created="20210130145342399" creator="Strange Squirrel" modified="20210207173135506" modifier="Strange Squirrel" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210130145342399" creator="Strange Squirrel" modified="20210215202454541" modifier="Strange Squirrel" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210129224428734" creator="Geodron" modified="20210129224428734" modifier="Geodron" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
@@ -13930,7 +13932,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210215200124716" creator="Strange Squirrel" list="Tasker Welcome" modified="20210215200124716" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210215200124716" creator="Strange Squirrel" list="[[Running Tasks from a Kindle]] Tasker Welcome" modified="20210215200220752" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14644,6 +14646,47 @@ The snag is getting the notifications to turn up on your FitBit at the right tim
 I've got a set of tasks that I use to quickly log when I drink some water to Fitbit. Sadly I can't do this logging on my Charge 4! So I've set Tasker up to run a little check at 10am, 4pm and 8pm every day. It uses the FitBit API through AutoWeb to check how much I've drunk so far today, and if it's less than the amount I specify, then it shows up a notification saying 'Drink some water!'. And that notification has action buttons at the bottom that let me log a water bottle or a coffee mug's worth of water.
 
 The idea here is that either I haven't drunk as much as I should have so far, and so getting a little notification will do me good as a reminder, of I have drunk enough but I haven't logged it, and so the notification lets me do just that. If I have drunk enough water according to the check, nothing happens.</pre>
+</div>
+<div created="20210215200233025" creator="Strange Squirrel" modified="20210215203220169" modifier="Strange Squirrel" title="Running Tasks from a Kindle">
+<pre>This is about running Tasker tasks from a proper e-reader Kindle, not the Amazon Fire Tablets (you can just put Tasker straight on those!)
+
+You ''can't'' run Tasker on a Kindle, so you still need to have your actual tasks set up on a phone, which will need to be switched on and connected to the internet, and all that.
+
+To trigger tasks from your Kindle to run on your phone, you want to use AutoRemote, a plugin for Tasker
+
+When you open AutoRemote you'll see your Personal URL. By loading this URL in any browser you can send short commands to Tasker on your phone.
+
+Load up this URL in a web browser on your PC and play around with the 'message' box on this screen and you'll see your phone acknowledge that they're being received. On the web page itself you'll see a blue box appear on the right where you can copy a modified version of your personal URL that, when opened, will send that 'message' straight away to your phone as soon as the page loads. This is the key to triggering tasks from your Kindle.
+
+We're going to set up Tasker to be ready to act on these messages from AutoRemote when they arrive, and then make a short ebook with a selection of these modified links so that we can run them from our Kindle.
+
+!!!In Tasker
+Make a new profile, have it react to an event, look for the AutoRemote Plugin and select 'autoremote' from the little menu. Then press 'configuration'. Set the message filter to whatever your message is going to be. Select 'exact message' - we are keeping things really simple for now so we may as well insist on the message matching exactly. Then attach whatever task you might like to be able to run from your Kindle.
+
+!!!On Your PC
+Take whatever you set your message filter to in the last step and write that in the message box in your personal URL. Copy the new URL that comes up in the blue box. Open up a text editor.
+
+We are going to make a little markdown file that we'll then convert into an ebook
+
+Here's a super short rundown of how to write using markdown that should be just enough for our little ebook
+
+If you want something to show up as normal text in your ebook, just write your text as normal. If you want it to be a heading, stick a '#' or two at the start of the line and then write what you want your heading to be. Like this:
+
+``##My Tasks``
+
+If you want something to be a clickable link (which we totally do), write the text that you want to be clickable, and enclose it in square brackets. Then right after, write the URL that the link should take you to, and enclose that in normal brackets, like this:
+
+``[text](www.somelink.com)``
+
+And in our case, we want the link to be that URL that we copied from the blue box earlier.
+
+Save this file as a markdown file (i.e. the extension needs to be ``.md``), and then load it into Calibre. Convert your .md file into a .mobi file using Calibre give it a nice title and everything, then transfer this Mobi ebook to your Kindle.
+
+!!!Done!
+So now whenever you want to trigger these tasks and you don't have your phone on you, open up that ebook on your Kindle, and just tap on the link. This will open the Kindle's Experimental (rubbish) Browser, it'll take a second to load, and then it'll give you a page that just says 'OK'. That means it sent your message to Tasker on your phone. If you set Tasker up right, that means it ran your task.
+
+!!!Examples
+I like to use this to start my bed-time slow sunset, and to log when I've drunk a glass of water to Fitbit. In my ebook I've also got a link that will use p2k.co to send 5 random articles from my saved articles on Pocket to my Kindle, although that doesn't use Tasker.</pre>
 </div>
 <div created="20210202213116212" creator="Strange Squirrel" modified="20210215200219349" modifier="Strange Squirrel" title="Tasker">
 <pre>Tasker is an automation app for Android and in my opinion is the best Android app there is. It lets you automate almost anything on your phone, to an extreme degree. Much more customsable than similar web-based automations like IFTTT. I would like to share a couple of the things that I've set up for myself here.
