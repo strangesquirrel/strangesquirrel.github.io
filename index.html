@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>$:/config/sq/Stories/storyRiverRatio</li>
 
+<li>$:/config/TextEditor/EnableToolbar</li>
+
 <li>$:/config/Tiddlers/TitleLinks</li>
 
 <li>$:/config/ui/EditTemplate</li>
@@ -272,6 +274,8 @@ Error message and password prompt
 <li>$:/core/ui/ControlPanel/StoryView 1</li>
 
 <li>$:/core/ui/ControlPanel/StoryView 2</li>
+
+<li>$:/core/ui/EditTemplate/fields</li>
 
 <li>$:/core/ui/ViewTemplate/title</li>
 
@@ -355,6 +359,8 @@ Error message and password prompt
 
 <li>$:/state/advancedsearch/currentTab</li>
 
+<li>$:/state/folded/$:/AdvancedSearch</li>
+
 <li>$:/state/folded/Bullet Journal</li>
 
 <li>$:/state/folded/Capturing ideas away from your notebook</li>
@@ -389,7 +395,11 @@ Error message and password prompt
 
 <li>$:/state/tab-1749438307</li>
 
+<li>$:/state/tab-1960292905</li>
+
 <li>$:/state/tab-2065006209</li>
+
+<li>$:/state/tab-241654698</li>
 
 <li>$:/state/tab/moresidebar-1850697562</li>
 
@@ -480,6 +490,8 @@ Error message and password prompt
 <li>The Peg System</li>
 
 <li>todo.txt</li>
+
+<li>Untitled</li>
 
 <li>Welcome</li>
 
@@ -1301,7 +1313,7 @@ background-color: &lt;&lt;colour tiddler-info-background&gt;&gt;;}
 
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20191220121428434" list-before="$:/core/ui/EditTemplate/body" modified="20200521203314462" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/EditTemplate/custom">
+<div created="20191220121428434" creator="Strange Squirrel" list-before="$:/core/ui/EditTemplate/body" modified="20210225205004685" modifier="Strange Squirrel" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/.giffmex/EditTemplate/custom">
 <pre>&quot;&quot;&quot;
 This is where you can add your own items you want visible in the edit template. For example:
 
@@ -1680,6 +1692,9 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 </div>
 <div bag="default" created="20200730040856198" modified="20200808143611448" revision="0" tags="" title="$:/config/sq/Stories/storyRiverRatio" type="text/vnd.tiddlywiki">
 <pre>50</pre>
+</div>
+<div created="20210225204957484" creator="Strange Squirrel" modified="20210225205009101" modifier="Strange Squirrel" title="$:/config/TextEditor/EnableToolbar">
+<pre>yes</pre>
 </div>
 <div bag="default" created="20200414150157768" creator="Strange Squirrel" modified="20210130150327862" modifier="Strange Squirrel" revision="0" tags="$:/giffmex/stroll" title="$:/config/Tiddlers/TitleLinks" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
@@ -11686,6 +11701,147 @@ exports.has = function(source,operator,options) {
 <div created="20200502183202293" modified="20200502183202293" title="$:/core/ui/ControlPanel/StoryView 2">
 <pre></pre>
 </div>
+<div created="20210225205009986" creator="Strange Squirrel" modified="20210225205014542" modifier="Strange Squirrel" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/fields">
+<pre>\define lingo-base() $:/language/EditTemplate/
+\define config-title()
+$:/config/EditTemplateFields/Visibility/$(currentField)$
+\end
+
+\define config-filter()
+[[hide]] -[title{$(config-title)$}]
+\end
+
+\define current-tiddler-new-field-selector()
+[data-tiddler-title=&quot;$(currentTiddlerCSSescaped)$&quot;] .tc-edit-field-add-name-wrapper input
+\end
+
+\define new-field-actions()
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $name={{{ [&lt;newFieldNameTiddler&gt;get[text]] }}} $value={{{ [&lt;newFieldValueTiddler&gt;get[text]] }}}/&gt;
+&lt;$action-deletetiddler $filter=&quot;[&lt;newFieldNameTiddler&gt;] [&lt;newFieldValueTiddler&gt;] [&lt;storeTitle&gt;] [&lt;searchListState&gt;]&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-focus-selector&quot; $param=&lt;&lt;current-tiddler-new-field-selector&gt;&gt;/&gt;
+\end
+
+\define delete-state-tiddlers() &lt;$action-deletetiddler $filter=&quot;[&lt;newFieldNameTiddler&gt;] [&lt;storeTitle&gt;] [&lt;searchListState&gt;]&quot;/&gt;
+
+\define cancel-search-actions-inner()
+&lt;$list filter=&quot;[&lt;storeTitle&gt;has[text]] [&lt;newFieldNameTiddler&gt;has[text]]&quot; variable=&quot;ignore&quot; emptyMessage=&quot;&quot;&quot;&lt;&lt;cancel-delete-tiddler-actions &quot;cancel&quot;&gt;&gt;&quot;&quot;&quot;&gt;
+&lt;&lt;delete-state-tiddlers&gt;&gt;
+&lt;/$list&gt;
+\end
+
+\define cancel-search-actions()
+&lt;$set name=&quot;userInput&quot; value={{{ [&lt;storeTitle&gt;get[text]] }}}&gt;
+&lt;$list filter=&quot;[&lt;newFieldNameTiddler&gt;get[text]!match&lt;userInput&gt;]&quot; emptyMessage=&quot;&quot;&quot;&lt;&lt;cancel-search-actions-inner&gt;&gt;&quot;&quot;&quot;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;newFieldNameTiddler&gt;&gt; text=&lt;&lt;userInput&gt;&gt;/&gt;&lt;$action-setfield $tiddler=&lt;&lt;refreshTitle&gt;&gt; text=&quot;yes&quot;/&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+\end
+
+\define new-field()
+&lt;$vars name={{{ [&lt;newFieldNameTiddler&gt;get[text]] }}}&gt;
+&lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; default=&lt;&lt;name&gt;&gt;&gt;
+&lt;$button tooltip=&lt;&lt;lingo Fields/Add/Button/Hint&gt;&gt;&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot;
+$name=&lt;&lt;name&gt;&gt;
+$value={{{ [&lt;newFieldValueTiddler&gt;get[text]] }}}/&gt;
+&lt;$action-deletetiddler $filter=&quot;[&lt;newFieldNameTiddler&gt;] [&lt;newFieldValueTiddler&gt;] [&lt;storeTitle&gt;] [&lt;searchListState&gt;]&quot;/&gt;
+&lt;&lt;lingo Fields/Add/Button&gt;&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;match&quot; text=&quot;&quot; default=&lt;&lt;name&gt;&gt;&gt;
+&lt;$button&gt;
+&lt;&lt;lingo Fields/Add/Button&gt;&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/$vars&gt;
+\end
+\whitespace trim
+
+&lt;div class=&quot;tc-edit-fields&quot;&gt;
+&lt;table class={{{ [all[current]fields[]] :filter[lookup[$:/config/EditTemplateFields/Visibility/]!match[hide]] +[count[]!match[0]] +[then[tc-edit-fields]] ~[[tc-edit-fields tc-edit-fields-small]] }}}&gt;
+&lt;tbody&gt;
+&lt;$list filter=&quot;[all[current]fields[]] +[sort[title]]&quot; variable=&quot;currentField&quot; storyview=&quot;pop&quot;&gt;
+&lt;$list filter=&lt;&lt;config-filter&gt;&gt; variable=&quot;temp&quot;&gt;
+&lt;tr class=&quot;tc-edit-field&quot;&gt;
+&lt;td class=&quot;tc-edit-field-name&quot;&gt;
+&lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;:&lt;/td&gt;
+&lt;td class=&quot;tc-edit-field-value&quot;&gt;
+&lt;$keyboard key=&quot;((delete-field))&quot; actions=&quot;&quot;&quot;&lt;$action-deletefield $field=&lt;&lt;currentField&gt;&gt;/&gt;&lt;$set name=&quot;currentTiddlerCSSescaped&quot; value={{{ [&lt;currentTiddler&gt;escapecss[]] }}}&gt;&lt;$action-sendmessage $message=&quot;tm-focus-selector&quot; $param=&lt;&lt;current-tiddler-new-field-selector&gt;&gt;/&gt;&lt;/$set&gt;&quot;&quot;&quot;&gt;
+&lt;$edit-text tiddler=&lt;&lt;currentTiddler&gt;&gt; field=&lt;&lt;currentField&gt;&gt; placeholder={{$:/language/EditTemplate/Fields/Add/Value/Placeholder}} tabindex={{$:/config/EditTabIndex}} cancelPopups=&quot;yes&quot;/&gt;
+&lt;/$keyboard&gt;
+&lt;/td&gt;
+&lt;td class=&quot;tc-edit-field-remove&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot; tooltip={{$:/language/EditTemplate/Field/Remove/Hint}} aria-label={{$:/language/EditTemplate/Field/Remove/Caption}}&gt;
+&lt;$action-deletefield $field=&lt;&lt;currentField&gt;&gt;/&gt;&lt;$set name=&quot;currentTiddlerCSSescaped&quot; value={{{ [&lt;currentTiddler&gt;escapecss[]] }}}&gt;&lt;$action-sendmessage $message=&quot;tm-focus-selector&quot; $param=&lt;&lt;current-tiddler-new-field-selector&gt;&gt;/&gt;&lt;/$set&gt;
+{{$:/core/images/delete-button}}
+&lt;/$button&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;$fieldmangler&gt;
+&lt;div class=&quot;tc-edit-field-add&quot;&gt;
+&lt;em class=&quot;tc-edit tc-big-gap-right&quot;&gt;
+&lt;&lt;lingo Fields/Add/Prompt&gt;&gt;
+&lt;/em&gt;
+&lt;$vars refreshTitle=&lt;&lt;qualify &quot;$:/temp/fieldname/refresh&quot;&gt;&gt; storeTitle=&lt;&lt;newFieldNameInputTiddler&gt;&gt; searchListState=&lt;&lt;newFieldNameSelectionTiddler&gt;&gt;&gt;
+&lt;div class=&quot;tc-edit-field-add-name-wrapper&quot;&gt;
+&lt;$macrocall $name=&quot;keyboard-driven-input&quot; tiddler=&lt;&lt;newFieldNameTiddler&gt;&gt; storeTitle=&lt;&lt;storeTitle&gt;&gt; refreshTitle=&lt;&lt;refreshTitle&gt;&gt;
+		selectionStateTitle=&lt;&lt;searchListState&gt;&gt; tag=&quot;input&quot; default=&quot;&quot; placeholder={{$:/language/EditTemplate/Fields/Add/Name/Placeholder}}
+		focusPopup=&lt;&lt;qualify &quot;$:/state/popup/field-dropdown&quot;&gt;&gt; class=&quot;tc-edit-texteditor tc-popup-handle&quot; tabindex={{$:/config/EditTabIndex}}
+		focus={{{ [{$:/config/AutoFocus}match[fields]then[true]] ~[[false]] }}} cancelPopups=&quot;yes&quot;
+		configTiddlerFilter=&quot;[[$:/config/EditMode/fieldname-filter]]&quot; inputCancelActions=&lt;&lt;cancel-search-actions&gt;&gt; /&gt;
+&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/field-dropdown&quot;&gt;&gt; class=&quot;tc-btn-invisible tc-btn-dropdown tc-small-gap&quot; tooltip={{$:/language/EditTemplate/Field/Dropdown/Hint}} aria-label={{$:/language/EditTemplate/Field/Dropdown/Caption}}&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;
+&lt;$reveal state=&lt;&lt;qualify &quot;$:/state/popup/field-dropdown&quot;&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+&lt;div class=&quot;tc-block-dropdown tc-edit-type-dropdown&quot;&gt;
+&lt;$set name=&quot;tv-show-missing-links&quot; value=&quot;yes&quot;&gt;
+&lt;$linkcatcher to=&lt;&lt;newFieldNameTiddler&gt;&gt;&gt;
+&lt;div class=&quot;tc-dropdown-item&quot;&gt;
+&lt;&lt;lingo Fields/Add/Dropdown/User&gt;&gt;
+&lt;/div&gt;
+&lt;$set name=&quot;newFieldName&quot; value={{{ [&lt;storeTitle&gt;get[text]] }}}&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]fields[]search:title&lt;newFieldName&gt;sort[]] -created -creator -draft.of -draft.title -modified -modifier -tags -text -title -type&quot;  variable=&quot;currentField&quot;&gt;
+&lt;$list filter=&quot;[&lt;currentField&gt;addsuffix[-primaryList]] -[&lt;searchListState&gt;get[text]]&quot; emptyMessage=&quot;&quot;&quot;&lt;$link to=&lt;&lt;currentField&gt;&gt; class=&quot;tc-list-item-selected&quot;&gt;&lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;&lt;/$link&gt;&quot;&quot;&quot;&gt;
+&lt;$link to=&lt;&lt;currentField&gt;&gt;&gt;
+&lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;
+&lt;/$link&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;div class=&quot;tc-dropdown-item&quot;&gt;
+&lt;&lt;lingo Fields/Add/Dropdown/System&gt;&gt;
+&lt;/div&gt;
+&lt;$list filter=&quot;[fields[]search:title&lt;newFieldName&gt;sort[]] -[!is[shadow]!is[system]fields[]]&quot; variable=&quot;currentField&quot;&gt;
+&lt;$list filter=&quot;[&lt;currentField&gt;addsuffix[-secondaryList]] -[&lt;searchListState&gt;get[text]]&quot; emptyMessage=&quot;&quot;&quot;&lt;$link to=&lt;&lt;currentField&gt;&gt; class=&quot;tc-list-item-selected&quot;&gt;&lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;&lt;/$link&gt;&quot;&quot;&quot;&gt;
+&lt;$link to=&lt;&lt;currentField&gt;&gt;&gt;
+&lt;$text text=&lt;&lt;currentField&gt;&gt;/&gt;
+&lt;/$link&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;/$linkcatcher&gt;
+&lt;/$set&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+&lt;span class=&quot;tc-edit-field-add-value tc-small-gap-right&quot;&gt;
+&lt;$set name=&quot;currentTiddlerCSSescaped&quot; value={{{ [&lt;currentTiddler&gt;escapecss[]] }}}&gt;
+&lt;$keyboard key=&quot;((add-field))&quot; actions=&lt;&lt;new-field-actions&gt;&gt;&gt;
+&lt;$edit-text tiddler=&lt;&lt;newFieldValueTiddler&gt;&gt; tag=&quot;input&quot; default=&quot;&quot; placeholder={{$:/language/EditTemplate/Fields/Add/Value/Placeholder}} class=&quot;tc-edit-texteditor&quot; tabindex={{$:/config/EditTabIndex}} cancelPopups=&quot;yes&quot;/&gt;
+&lt;/$keyboard&gt;
+&lt;/$set&gt;
+&lt;/span&gt;
+&lt;span class=&quot;tc-edit-field-add-button&quot;&gt;
+&lt;$macrocall $name=&quot;new-field&quot;/&gt;
+&lt;/span&gt;
+&lt;/$vars&gt;
+&lt;/div&gt;
+&lt;/$fieldmangler&gt;
+</pre>
+</div>
 <div caption="TiddlyWiki default tiddler title position" created="20200418121129515" modified="20210129213446156" tags="$:/giffmex/stroll $:/giffmex/titleview" title="$:/core/ui/ViewTemplate/title">
 <pre>\define title-styles()
 fill:$(foregroundColor)$;
@@ -11742,7 +11898,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/jd/palette/Neonize]]</pre>
+# [[Untitled]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -13927,6 +14083,9 @@ exports.context = contextWidget;
 <div created="20210130145402307" creator="Strange Squirrel" modified="20210220194510293" modifier="Strange Squirrel" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
+<div created="20210225205402062" creator="Strange Squirrel" modified="20210225205402062" modifier="Strange Squirrel" title="$:/state/folded/$:/AdvancedSearch">
+<pre>show</pre>
+</div>
 <div created="20210207212217829" creator="Strange Squirrel" modified="20210215205337133" modifier="Strange Squirrel" title="$:/state/folded/Bullet Journal">
 <pre>show</pre>
 </div>
@@ -13936,10 +14095,10 @@ exports.context = contextWidget;
 <div created="20210206223639008" creator="Strange Squirrel" modified="20210206223640048" modifier="Strange Squirrel" title="$:/state/folded/Tasker">
 <pre>show</pre>
 </div>
-<div created="20210207212217829" creator="Strange Squirrel" modified="20210215205337134" modifier="Strange Squirrel" title="$:/state/folded/Welcome">
+<div created="20210207212217829" creator="Strange Squirrel" modified="20210225205402062" modifier="Strange Squirrel" title="$:/state/folded/Welcome">
 <pre>show</pre>
 </div>
-<div created="20210130150351179" creator="Strange Squirrel" modified="20210220210840558" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
+<div created="20210130150351179" creator="Strange Squirrel" modified="20210225205358928" modifier="Strange Squirrel" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
 <div created="20210131151733986" creator="Strange Squirrel" modified="20210220194204117" modifier="Strange Squirrel" title="$:/state/notebook-sidebar-section">
@@ -13978,10 +14137,16 @@ exports.context = contextWidget;
 <div created="20210129213756284" creator="Geodron" modified="20210220221035322" modifier="Strange Squirrel" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
+<div created="20210225204909915" creator="Strange Squirrel" modified="20210225204937152" modifier="Strange Squirrel" title="$:/state/tab-1960292905">
+<pre>$:/core/ui/TiddlerInfo/Fields</pre>
+</div>
 <div created="20210129213808894" creator="Geodron" modified="20210207173706587" modifier="Strange Squirrel" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/DownloadSaver</pre>
 </div>
-<div created="20210131151739939" creator="Strange Squirrel" modified="20210220194213260" modifier="Strange Squirrel" title="$:/state/tab/moresidebar-1850697562">
+<div created="20210225205410885" creator="Strange Squirrel" modified="20210225205417037" modifier="Strange Squirrel" title="$:/state/tab-241654698">
+<pre>$:/plugins/flibbles/relink/ui/TiddlerInfo/References</pre>
+</div>
+<div created="20210131151739939" creator="Strange Squirrel" modified="20210225205355222" modifier="Strange Squirrel" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
 <div created="20210129213434661" modified="20210129213434661" title="$:/state/tab/sidebar--595412856">
@@ -14005,7 +14170,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div list="Welcome" title="$:/StoryList">
+<div created="20210225205037715" creator="Strange Squirrel" list="$:/Import Welcome" modified="20210225205347170" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -14993,6 +15158,9 @@ Source: [[Tricks of the Mind - Derren Brown|https://www.amazon.co.uk/Tricks-Mind
 <pre>[[todo.txt|http://todotxt.org]] is a productivity system that lets you throw everything into a single .txt file, then filter and edit it etc and stay organised from there. It's really clever. To be honest I don't use it properly cos I like a bit pen and paper, but I still use todo.txt apps in places, just cos the system is so flexible and fast.
 
 </pre>
+</div>
+<div title="Untitled">
+<pre>about:blank#blocked</pre>
 </div>
 <div created="20210129214903647" creator="Geodron" modified="20210225082730180" modifier="Strange Squirrel" tags="" title="Welcome">
 <pre>Hello and welcome
