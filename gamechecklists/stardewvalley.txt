@@ -1,0 +1,127 @@
+Cauliflower @spring +grow
+Daffofil @spring +forage
+Dandelion @spring +forage
+Green Bean @spring +grow
+Leek @spring +forage
+Parsnip @spring +grow
+Potato @spring +grow
+Wild Horseradish @spring +forage
+Parsnip (Gold) x5 @spring+ +grow
+Catfish @spring @fall +river +day +raining
+Eel @spring @fall +ocean +night +raining
+Pomegranate @spring @summer +plant
+Pomegranata @fall +harvest
+Apple @spring @summer +plant
+Apple x3 @fall +harvest
+Apricot @spring +harvest
+Apricot @fall @winter +plant
+Cherry @spring +harvest
+Cherry @fall @winter +plant
+Bat Wing x10 (lvl 1-120) @spring @summer @fall @winter +mine
+Bullhead @spring @summer +lake
+Shad @spring @summer +lake +before2pm +raining
+Sunfish @spring @summer +river +day
+Aquamarine (lvl 40-80) @spring @summer @fall @winter +mine
+Bream @spring @summer @fall @winter +river +night
+Cactus Fruit @spring @summer @fall @winter +desert
+Carp @spring @summer @fall +lake
+Cave Carrot @spring @summer @fall @winter +mine
+Cheese @spring @summer @fall @winter +farm
+Chub @spring @summer @fall +lake +river +day
+Clam @spring @summer @fall @winter +pots +beach
+Cloth @spring @summer @fall @winter +farm
+Cockle @spring @summer @fall @winter +pots +beach
+Coconut @spring @summer @fall @winter +desert
+Copper Bar (lvl 1-40) @spring @summer @fall @winter +mine
+Crab @spring @summer @fall @winter +pots +mine
+Crayfish @spring @summer @fall @winter +pots
+Duck Egg @spring @summer @fall @winter +advancedcoop
+Earth Crystal (lvl 1-40) @spring @summer @fall @winter +mine
+Egg (Large Brown) @spring @summer @fall @winter +farm
+Egg (Large White) @spring @summer @fall @winter +farm
+Fiddlehead Fern @spring @summer @fall +woods
+Fire Quartz @spring @summer @fall @winter +mine
+Fried Egg @spring @summer @fall @winter +cook
+Frozen Geode @spring @summer @fall @winter +mine
+Frozen Tear @spring @summer @fall @winter +mine
+Fruit x6 @spring @summer @fall @winter +farm
+Ghostfish @spring @summer @fall @winter +mine
+Goat Cheese@spring @summer @fall @winter +farm
+Goat Milk (Large) @spring @summer @fall @winter +farm
+Gold Bar (lvl 8-120) @spring @summer @fall @winter +mine
+Hardwood x10 @spring @summer @fall @winter
+Hay x10 @spring @summer @fall @winter
+Honey @spring @summer @fall @winter +farm
+Iron Bar (lvl 40-80) @spring @summer @fall @winter +mine
+Jelly @spring @summer @fall @winter +farm
+Largemouth Bass @spring @summer @fall @winter +lake +day
+Lobster @spring @summer @fall @winter +pots
+Maki Roll @spring @summer @fall @winter +cook
+Maple Syrup x3 @spring @summer @fall @winter +taptree
+Milk @spring @summer @fall @winter +farm
+Morel @spring @summer @fall @winter +woods
+Mussel @spring @summer @fall @winter +pots
+Oak Resin x5 @spring @summer @fall @winter +taptree
+Oyster @spring @summer @fall @winter +pots
+Periwinkle @spring @summer @fall @winter +pots
+Pine Tar @spring @summer @fall @winter +taptree
+Purple Mushroom x3 (lvl 80-100) @spring @summer @fall @winter +mine
+Quartz (lvl 1-40) @spring @summer @fall @winter +mine
+Rabbits Foot @spring @summer @fall @winter +farm
+Red Mushroom x3 @spring @summer @fall @winter +farm
+Sandfish @spring @summer @fall @winter +desert
+Sardine @spring @summer @fall @winter +ocean +day
+Sea Urchin @spring @summer @fall @winter +beach
+Shad @spring @summer +river +before2pm +raining
+Shrimp @spring @summer @fall @winter +pots
+Slime x99 (lvl 120) @spring @summer @fall @winter +mine
+Snail @spring @summer @fall @winter +pots
+Solar Essence (lvl 60-80) @spring @summer @fall @winter +mine
+Stone x99 @spring @summer @fall @winter
+Sunfish @spring @summer +river +day
+Truffle @spring @summer @fall @winter +farm
+Truffle Oil @spring @summer @fall @winter +farm
+Void Essence (lvl 80-100) @spring @summer @fall @winter +mine
+Wine @spring @summer @fall @winter +farm
+Woodskip @spring @summer @fall @winter +woods
+Wood x99 @spring @summer @fall @winter
+Wood x99 @spring @summer @fall @winter
+Wool @spring @summer @fall @winter +farm
+10,000g @spring @summer @fall @winter
+25,000g @spring @summer @fall @winter
+2,500g @spring @summer @fall @winter
+5,000g @spring @summer @fall @winter
+Blackberry @fall +forage
+Blueberry @summer +grow
+Common Mushroom @fall +forage
+Corn @summer @fall +grow
+Crocus @winter +forage
+Crystal Fruit @winter +forage
+Eggplant @fall +grow
+Grape @summer @fall +forage
+Hazelnot @fall +forage
+Hot Pepper @summer +grow
+Melon @summer +grow
+Nautilus Shell @winter +beach
+Poppy @summer +grow
+Pufferfish @summer +ocean +noon
+Pumpkin @fall +grow
+Red Cabbage @summer +year2 +grow
+Red Snapper @summer @fall +ocean +day +raining
+Snow Yam @winter +forage
+Spice Berry @summer +forage
+Sturgeon @summer @winter +lake +day 
+Sunflower @summer @fall +grow
+Sweet Pea @summer +forage
+Tiger Trout @fall @winter +river +morning
+Tilapia @summer @fall +ocean +before2pm
+Tomato @summer +grow
+Tuna @summer @winter +ocean +day
+Walleye @fall +river +night +raining
+Wild Plum @fall +forage
+Winter Root @winter +forage
+Yam @fall +grow
+Corn (gold) x5 @summer @fall +grow
+Melon (gold) x5 @summer +grow
+Pumpkin (gold) x5 @fall +grow
+Wheat x10 @summer  +grow
