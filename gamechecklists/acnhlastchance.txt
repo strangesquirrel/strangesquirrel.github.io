@@ -1,0 +1,15 @@
+Emperor Butterfly 5pm-8am @march +bug
+Bitterling @march +river
+Football Fish @march +river
+Sea Butterfly @march +ocean
+Stringfish 4pm-9am clifftop +river only @march
+Sturgeon mouth of +river only @march
+Yellow Perch @march +river
+Red King Crab @march +diving
+Rajah Brooke's Birdwing 8am-5pm @february +bug
+Pond Smelt (small shadow) @february +river
+Blowfish (medium shadow) 9pm-4am @february +river
+Oyster (small shadow) @february +diving
+Sea Pig (medium shadow) 4pm-9am @february +diving
+Sweet Shrimp (small shadow) 4pm-9am @february +diving
+Venus' Flower Basket (medium shadow) @february +diving
