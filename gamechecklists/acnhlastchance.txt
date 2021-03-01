@@ -1,10 +1,10 @@
 Emperor Butterfly 5pm-8am @march +bug
-Bitterling @march +river
-Football Fish @march +river
-Sea Butterfly @march +ocean
-Stringfish 4pm-9am clifftop +river only @march
-Sturgeon mouth of +river only @march
-Yellow Perch @march +river
+Bitterling (small shadow) @march +river
+Football Fish (large shadow) @march +ocean
+Sea Butterfly (smallest shadow) @march +ocean
+Stringfish (largest shadow) 4pm-9am clifftop +river only @march
+Sturgeon (largest shadow) mouth of +river only @march
+Yellow Perch (medium shadow) @march +river
 Red King Crab @march +diving
 Rajah Brooke's Birdwing 8am-5pm @february +bug
 Pond Smelt (small shadow) @february +river
