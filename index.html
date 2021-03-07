@@ -407,6 +407,30 @@ Error message and password prompt
 
 <li>$:/state/notebook-sidebar-section</li>
 
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/alert-highlight</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/button-background</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/dropzone-background</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/external-link-foreground-visited</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/message-foreground</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-backdrop</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-background</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-border</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-info-border</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-info-tab-background</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-link-background</li>
+
+<li>$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-title-foreground</li>
+
 <li>$:/state/palettemanager/showexternal</li>
 
 <li>$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs</li>
@@ -12018,12 +12042,12 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div caption="My Dark Palette" created="20210307090531543" creator="Strange Squirrel" description="My attempt" modified="20210307090638165" modifier="Strange Squirrel" name="My Dark Palette" tags="$:/tags/Palette" title="$:/jd/palette/My Dark Palette" type="application/x-tiddler-dictionary">
-<pre>alert-background: #644a7d
-alert-border: #644a7d
+<div caption="My Dark Palette" created="20210307090531543" creator="Strange Squirrel" description="My attempt" modified="20210307093612529" modifier="Strange Squirrel" name="My Dark Palette" tags="$:/tags/Palette" title="$:/jd/palette/My Dark Palette" type="application/x-tiddler-dictionary">
+<pre>alert-background: &lt;&lt;colour alert-border&gt;&gt;
+alert-border: #85cb33
 alert-highlight: &lt;&lt;colour primary&gt;&gt;
 alert-muted-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
-background: #2A2B30
+background: #323434
 blockquote-bar: &lt;&lt;colour muted-foreground&gt;&gt;
 button-background: &lt;&lt;colour page-background&gt;&gt;
 button-foreground: &lt;&lt;colour foreground&gt;&gt;
@@ -12032,7 +12056,7 @@ code-background: &lt;&lt;colour page-background&gt;&gt;
 code-border: &lt;&lt;colour page-background&gt;&gt;
 code-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
 dirty-indicator: &lt;&lt;colour primary&gt;&gt;
-download-background: #644a7d
+download-background: &lt;&lt;colour alert-border&gt;&gt;
 download-foreground: &lt;&lt;colour background&gt;&gt;
 dragger-background: &lt;&lt;colour foreground&gt;&gt;
 dragger-foreground: &lt;&lt;colour background&gt;&gt;
@@ -12046,10 +12070,10 @@ external-link-background-visited: inherit
 external-link-background: inherit
 external-link-foreground-hover: inherit
 external-link-foreground-visited: &lt;&lt;colour tag-background&gt;&gt;
-external-link-foreground: #f0b000
+external-link-foreground: #E2FCEF
 foreground: rgba(255,255,255,0.87)
-message-background: #644a7d
-message-border: #644a7d
+message-background: &lt;&lt;colour alert-border&gt;&gt;
+message-border: &lt;&lt;colour alert-border&gt;&gt;
 message-foreground: &lt;&lt;colour foreground&gt;&gt;
 modal-backdrop: &lt;&lt;colour page-background&gt;&gt;
 modal-background: &lt;&lt;colour background&gt;&gt;
@@ -12058,12 +12082,12 @@ modal-footer-background: &lt;&lt;colour background&gt;&gt;
 modal-footer-border: &lt;&lt;colour background&gt;&gt;
 modal-header-border: &lt;&lt;colour muted-foreground&gt;&gt;
 muted-foreground: rgba(255,255,255,0.5)
-notification-background: #644a7d
-notification-border: #644a7d
-page-background: #1c1d22
+notification-background: &lt;&lt;colour alert-border&gt;&gt;
+notification-border: &lt;&lt;colour alert-border&gt;&gt;
+page-background: #172121
 pre-background: &lt;&lt;colour page-background&gt;&gt;
 pre-border: &lt;&lt;colour page-background&gt;&gt;
-primary: #00a9c7
+primary: #439A86
 sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
 sidebar-controls-foreground-hover: inherit
 sidebar-controls-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
@@ -12092,13 +12116,13 @@ tab-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
 table-border: &lt;&lt;colour page-background&gt;&gt;
 table-footer-background: rgba(0, 0, 0, 0.1)
 table-header-background: rgba(0, 0, 0, 0.2)
-tag-background: #8a6ca8
+tag-background: &lt;&lt;alert-border&gt;&gt;
 tag-foreground: &lt;&lt;colour foreground&gt;&gt;
 tiddler-background: &lt;&lt;colour background&gt;&gt;
 tiddler-border: &lt;&lt;colour background&gt;&gt;
 tiddler-controls-foreground-hover: inherit
 tiddler-controls-foreground-selected: &lt;&lt;colour foreground&gt;&gt;
-tiddler-controls-foreground: #6b6b6b
+tiddler-controls-foreground: #E2FCEF
 tiddler-editor-background: &lt;&lt;colour background&gt;&gt;
 tiddler-editor-border-image: &lt;&lt;colour background&gt;&gt;
 tiddler-editor-border: rgba(255,255,255,0.1)
@@ -12120,7 +12144,7 @@ toolbar-close-button:
 toolbar-delete-button: 
 toolbar-cancel-button: 
 toolbar-done-button: 
-untagged-background: #3a3a3a
+untagged-background: #E2FCEF
 very-muted-foreground: rgba(255,255,255,0.2)</pre>
 </div>
 <div caption="Neonize" created="20171022175917849" creator="JD" description="Darkly colorful" modified="20180905153026076" modifier="jd" name="Neonize" tags="$:/tags/Palette" title="$:/jd/palette/Neonize" type="application/x-tiddler-dictionary">
@@ -12288,8 +12312,8 @@ very-muted-foreground: rgba(255,255,255,0.2)</pre>
 button.green-link {color:#00cc00;}
 </pre>
 </div>
-<div created="20200228210954683" creator="Geodron" modified="20210306231557621" modifier="Strange Squirrel" title="$:/palette">
-<pre>$:/jd/palette/Neonize</pre>
+<div created="20200228210954683" creator="Geodron" modified="20210307092057692" modifier="Strange Squirrel" title="$:/palette">
+<pre>$:/jd/palette/My Dark Palette</pre>
 </div>
 <div created="20200808143350695" modified="20200808143350695" title="$:/palettes/Vanilla 1">
 <pre></pre>
@@ -14360,7 +14384,43 @@ exports.context = contextWidget;
 <div created="20210131151733986" creator="Strange Squirrel" modified="20210306210551795" modifier="Strange Squirrel" title="$:/state/notebook-sidebar-section">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20210129225102001" creator="Geodron" modified="20210306231551087" modifier="Strange Squirrel" title="$:/state/palettemanager/showexternal">
+<div created="20210307092726910" creator="Strange Squirrel" modified="20210307092726910" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/alert-highlight">
+<pre>show</pre>
+</div>
+<div created="20210307090930007" creator="Strange Squirrel" modified="20210307090930007" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/button-background">
+<pre>show</pre>
+</div>
+<div created="20210307091053082" creator="Strange Squirrel" modified="20210307091053082" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/dropzone-background">
+<pre>show</pre>
+</div>
+<div created="20210307092118967" creator="Strange Squirrel" modified="20210307092118967" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/external-link-foreground-visited">
+<pre>show</pre>
+</div>
+<div created="20210307091141619" creator="Strange Squirrel" modified="20210307091141619" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/message-foreground">
+<pre>show</pre>
+</div>
+<div created="20210307091139820" creator="Strange Squirrel" modified="20210307091139820" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-backdrop">
+<pre>show</pre>
+</div>
+<div created="20210307091146502" creator="Strange Squirrel" modified="20210307091146502" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-background">
+<pre>show</pre>
+</div>
+<div created="20210307091157640" creator="Strange Squirrel" modified="20210307091157640" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/modal-border">
+<pre>show</pre>
+</div>
+<div created="20210307091915285" creator="Strange Squirrel" modified="20210307091915285" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-info-border">
+<pre>show</pre>
+</div>
+<div created="20210307091743977" creator="Strange Squirrel" modified="20210307091743977" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-info-tab-background">
+<pre>show</pre>
+</div>
+<div created="20210307093011007" creator="Strange Squirrel" modified="20210307093011007" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-link-background">
+<pre>show</pre>
+</div>
+<div created="20210307091740747" creator="Strange Squirrel" modified="20210307091740747" modifier="Strange Squirrel" title="$:/state/palettemanager/$:/jd/palette/My Dark Palette/tiddler-title-foreground">
+<pre>show</pre>
+</div>
+<div created="20210129225102001" creator="Geodron" modified="20210307090710253" modifier="Strange Squirrel" title="$:/state/palettemanager/showexternal">
 <pre>no</pre>
 </div>
 <div created="20210206140802959" creator="Strange Squirrel" modified="20210206140802959" modifier="Strange Squirrel" title="$:/state/plugin-info--1284604328-$:/plugins/wikilabs/link-to-tabs">
@@ -14384,7 +14444,7 @@ exports.context = contextWidget;
 <div created="20210129224428734" creator="Geodron" modified="20210129224428734" modifier="Geodron" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210306221229389" creator="Strange Squirrel" modified="20210307090328012" modifier="Strange Squirrel" title="$:/state/sidebar">
+<div created="20210306221229389" creator="Strange Squirrel" modified="20210307093418547" modifier="Strange Squirrel" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20210225211425165" creator="Strange Squirrel" modified="20210225211447980" modifier="Strange Squirrel" title="$:/state/tab--1418380610">
@@ -14447,7 +14507,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210306231344720" creator="Strange Squirrel" list="[[$:/jd/palette/My Dark Palette]] $:/ControlPanel Gaming Welcome" modified="20210307090214468" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210306231344720" creator="Strange Squirrel" list="[[Blink - Malcolm Gladwell]] Reading [[Bullet Journal]] $:/ControlPanel Gaming Welcome" modified="20210307093633886" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
