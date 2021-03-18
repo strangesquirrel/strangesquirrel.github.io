@@ -567,8 +567,6 @@ Error message and password prompt
 
 <li>Custom Image Stylesheet</li>
 
-<li>Draft of 'Reading' by Strange Squirrel</li>
-
 <li>Fitbit</li>
 
 <li>game-review</li>
@@ -14567,7 +14565,7 @@ exports.context = contextWidget;
 <div bag="default" created="20210129213702818" creator="G" modified="20210130144937817" modifier="Strange Squirre" revision="1" title="$:/status/UserName">
 <pre>Strange Squirrel</pre>
 </div>
-<div created="20210318211611081" creator="Strange Squirrel" list="[[REAMDE - Neal Stephenson]] [[The Lottery and Other Stories - Shirley Jackson]] [[Draft of 'Reading' by Strange Squirrel]] Welcome" modified="20210318213651451" modifier="Strange Squirrel" title="$:/StoryList">
+<div created="20210318211611081" creator="Strange Squirrel" list="Reading Welcome" modified="20210318213651451" modifier="Strange Squirrel" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200519141000553" list="$:/.giffmex/Buttons/more-tiddler-edit-actions $:/core/ui/Buttons/delete $:/core/ui/Buttons/cancel $:/core/ui/Buttons/save" modified="20200521145647980" tags="$:/giffmex/bigeditarea $:/giffmex/stroll" title="$:/tags/EditToolbar">
@@ -15281,16 +15279,6 @@ code {color: #eee; background-color: #122;}
 .tw-context {background-color: #122;}
 </pre>
 </div>
-<div created="20210207212346797" creator="Strange Squirrel" draft.of="Reading" draft.title="Reading" modified="20210318213127852" modifier="Strange Squirrel" title="Draft of 'Reading' by Strange Squirrel">
-<pre>!! Book reviews
-
-{{book-review}}
-
-!! Stats so far
-
-* Number of books read: &lt;$count filter=&quot;[tag[book-review]]&quot;/&gt;
-* Number of pages read: &lt;$text text={{{ [tag[book-review]get[no_of_pages]sum[]] }}}/&gt;</pre>
-</div>
 <div created="20210207204121056" creator="Strange Squirrel" modified="20210207204544971" modifier="Strange Squirrel" title="Fitbit">
 <pre>I have a FitBit Charge 4. Enjoying using it for the things it's meant to do, like tracking my activites and sleep.
 
@@ -15780,10 +15768,15 @@ But of course you need to take phone calls on this right, and get your quick not
 
 Keep foldable screens. //This// is what I want my next phone to be like.</pre>
 </div>
-<div created="20210207212346797" creator="Strange Squirrel" modified="20210314220158960" modifier="Strange Squirrel" title="Reading">
+<div created="20210207212346797" creator="Strange Squirrel" modified="20210318213948702" modifier="Strange Squirrel" title="Reading">
 <pre>!! Book reviews
 
-{{book-review}}</pre>
+{{book-review}}
+
+!! Stats so far
+
+* Number of books read: &lt;$count filter=&quot;[tag[book-review]date_finished[2021]]&quot;/&gt;
+* Number of pages read: &lt;$text text={{{ [tag[book-review]date_finished[2021]get[no_of_pages]sum[]] }}}/&gt;</pre>
 </div>
 <div by="Stephenson, Neal" created="20210312211756921" creator="Strange Squirrel" date_finished="2021" modified="20210318213808526" modifier="Strange Squirrel" no_of_pages="1055" rating="3" tags="book-review" title="REAMDE - Neal Stephenson" type="text/x-markdown">
 <pre>My first 'long' book of the year. I always feel a little bit hesitant when starting one of these because they're a bit of a big time investment, and what if I don't like them in the end?
