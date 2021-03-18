@@ -15776,7 +15776,7 @@ But of course you need to take phone calls on this right, and get your quick not
 
 Keep foldable screens. //This// is what I want my next phone to be like.</pre>
 </div>
-<div created="20210207212346797" creator="Strange Squirrel" modified="20210318215415037" modifier="Strange Squirrel" title="Reading">
+<div created="20210207212346797" creator="Strange Squirrel" modified="20210318215624008" modifier="Strange Squirrel" title="Reading">
 <pre>!! Book reviews
 
 {{book-review}}
@@ -15786,7 +15786,10 @@ Keep foldable screens. //This// is what I want my next phone to be like.</pre>
 * Number of books read: &lt;$count filter=&quot;[tag[book-review]date_finished[2021]]&quot;/&gt;
 * Number of pages read: &lt;$text text={{{ [tag[book-review]date_finished[2021]get[no_of_pages]sum[]] }}}/&gt;
 
-&lt;$button message=&quot;tm-new-tiddler&quot; param=&quot;Book Review - Template&quot; tags=&quot;book-review&quot;&gt;New Review&lt;/$button&gt;</pre>
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;New Book Review&quot; tags=&quot;book-review&quot; text=&quot;__Rating: {{!!rating}}/3 stars__&quot;/&gt;
+Add Book
+&lt;/$button&gt;</pre>
 </div>
 <div by="Stephenson, Neal" created="20210312211756921" creator="Strange Squirrel" date_finished="2021" modified="20210318214013120" modifier="Strange Squirrel" no_of_pages="1055" rating="3" tags="book-review" title="REAMDE - Neal Stephenson" type="text/x-markdown">
 <pre>My first 'long' book of the year. I always feel a little bit hesitant when starting one of these because they're a bit of a big time investment, and what if I don't like them in the end?
