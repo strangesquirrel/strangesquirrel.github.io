@@ -15796,8 +15796,13 @@ But of course you need to take phone calls on this right, and get your quick not
 
 Keep foldable screens. //This// is what I want my next phone to be like.</pre>
 </div>
-<div created="20210207212346797" creator="Strange Squirrel" modified="20210319100048041" modifier="Strange Squirrel" title="Reading">
+<div created="20210207212346797" creator="Strange Squirrel" modified="20210319100130913" modifier="Strange Squirrel" title="Reading">
 <pre>!! Book reviews
+
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;New Book Review&quot; tags=&quot;book-review&quot; text=&quot;__Rating: {{!!rating}}/3 stars__&quot; type=&quot;text/x-markdown&quot; by=&quot;&quot; no_of_pages=&quot;&quot; rating=&quot;&quot; date_finished=&lt;&lt;now YYYY&gt;&gt;/&gt;
+Add Book
+&lt;/$button&gt;
 
 {{book-review}}
 
@@ -15805,11 +15810,6 @@ Keep foldable screens. //This// is what I want my next phone to be like.</pre>
 
 * Number of books read: &lt;$count filter=&quot;[tag[book-review]date_finished[2021]]&quot;/&gt;
 * Number of pages read: &lt;$text text={{{ [tag[book-review]date_finished[2021]get[no_of_pages]sum[]] }}}/&gt;
-
-&lt;$button&gt;
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;New Book Review&quot; tags=&quot;book-review&quot; text=&quot;__Rating: {{!!rating}}/3 stars__&quot; type=&quot;text/x-markdown&quot; by=&quot;&quot; no_of_pages=&quot;&quot; rating=&quot;&quot; date_finished=&lt;&lt;now YYYY&gt;&gt;/&gt;
-Add Book
-&lt;/$button&gt;
 
 !! External Links
 
