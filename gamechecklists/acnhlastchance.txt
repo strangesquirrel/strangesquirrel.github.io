@@ -13,3 +13,9 @@ Oyster (small shadow) @february +diving
 Sea Pig (medium shadow) 4pm-9am @february +diving
 Sweet Shrimp (small shadow) 4pm-9am @february +diving
 Venus' Flower Basket (medium shadow) @february +diving
+Tarantula 7pm-4am +bug @april
+Dab (medium shadow) +ocean @april
+Tuna (largest shadow) +ocean pier @april
+Sea Cucumber +diving @april
+Snow Crab +diving @april
+Spider Crab +diving @april
