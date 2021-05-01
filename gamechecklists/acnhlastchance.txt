@@ -19,3 +19,10 @@ Tuna (largest shadow) +ocean pier @april
 Sea Cucumber +diving @april
 Snow Crab +diving @april
 Spider Crab +diving @april
+Golden Trout (medium shadow) 4pm-9am clifftop +river @may
+Loach (small shadow) +river @may
+Oarfish (largest shadow) +ocean @may
+Turban Shell +diving @may
+Umbrella Octopus +diving @may
+Dungeness Crab +diving @may
+Mole Cricket (underground) +bug @may
